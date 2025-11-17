@@ -1,409 +1,325 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4d5055; -webkit-text-stroke: #4d5055}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; -webkit-text-stroke: #000000; min-height: 16.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #18702b; -webkit-text-stroke: #18702b}
-    span.s1 {font-kerning: none; background-color: #ecf1f7}
-    span.s2 {font-kerning: none; color: #fb0007; background-color: #ecf1f7; -webkit-text-stroke: 0px #fb0007}
-    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #ecf1f7; -webkit-text-stroke: 0px #2a2a2a}
-    span.s4 {font-kerning: none; color: #000000; background-color: #ecf1f7; -webkit-text-stroke: 0px #000000}
-    span.s5 {font-kerning: none; color: #0000ff; background-color: #ecf1f7; -webkit-text-stroke: 0px #0000ff}
-    span.s6 {font-kerning: none; color: #6b0001; background-color: #ecf1f7; -webkit-text-stroke: 0px #6b0001}
-    span.s7 {font-kerning: none; color: #18702b; background-color: #ecf1f7; -webkit-text-stroke: 0px #18702b}
-    span.s8 {font-kerning: none; color: #093c94; background-color: #ecf1f7; -webkit-text-stroke: 0px #093c94}
-    span.s9 {font-kerning: none}
-    span.s10 {font-kerning: none; color: #4d5055; background-color: #ecf1f7; -webkit-text-stroke: 0px #4d5055}
-    span.s11 {font-kerning: none; color: #6f0ec3; background-color: #ecf1f7; -webkit-text-stroke: 0px #6f0ec3}
-    span.s12 {font-kerning: none; color: #a4450b; background-color: #ecf1f7; -webkit-text-stroke: 0px #a4450b}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>April Home Studio - Design & Build</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple scroll-behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Helper class to hide/show mobile menu */
+        .menu-hidden {
+            display: none;
+        }
+    </style>
 </head>
-<body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"en"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">April Home Studio - Design &amp; Build</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Load Tailwind CSS --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">script</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s6">script</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Load Inter font --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Apply Inter font */</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">body</span><span class="s1"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s1"> </span><span class="s7">'Inter'</span><span class="s1">, </span><span class="s8">sans-serif</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Simple scroll-behavior */</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">html</span><span class="s1"> {</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">scroll-behavior:</span><span class="s4"> </span><span class="s8">smooth</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">/* Helper class to hide/show mobile menu */</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">.menu-hidden</span><span class="s4"> {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">display:</span><span class="s1"> </span><span class="s8">none</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s3">&lt;</span><span class="s6">body</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-gray-50 text-gray-800"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Header &amp; Navigation --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">header</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white shadow-md sticky top-0 z-50"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">nav</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-6 py-4 flex justify-between items-center"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- Company Logo/Name --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl font-bold text-teal-700"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>April Home Studio</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- Desktop Navigation --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hidden md:flex space-x-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#about"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-600 hover:text-teal-700 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">About</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#services"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-600 hover:text-teal-700 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Services</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-600 hover:text-teal-700 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Gallery</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#contact"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Contact Us</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- Mobile Menu Button (Hamburger) --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"md:hidden"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"menu-toggle"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-gray-800 focus:outline-none"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">svg</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-6 h-6"</span><span class="s4"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s4"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s4"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s4"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s1">stroke-linecap</span><span class="s3">=</span><span class="s5">"round"</span><span class="s4"> </span><span class="s1">stroke-linejoin</span><span class="s3">=</span><span class="s5">"round"</span><span class="s4"> </span><span class="s1">stroke-width</span><span class="s3">=</span><span class="s5">"2"</span><span class="s4"> </span><span class="s1">d</span><span class="s3">=</span><span class="s5">"M4 6h16M4 12h16m-7 6h7"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">svg</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">nav</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Mobile Menu (Dropdown) --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"mobile-menu"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"md:hidden menu-hidden bg-white shadow-lg"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#about"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block px-6 py-3 text-gray-600 hover:bg-teal-50 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">About</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#services"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block px-6 py-3 text-gray-600 hover:bg-teal-50 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Services</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block px-6 py-3 text-gray-600 hover:bg-teal-50 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Gallery</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#contact"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block px-6 py-3 bg-teal-600 text-white hover:bg-teal-700 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Contact Us</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">header</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Main Content --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">main</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Hero Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"hero"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- Background Image --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute inset-0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/1600x800/5A9A9A/FFFFFF?text=Quality+Design+%26+Build"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                     </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"Modern home exterior"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                     </span></span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full h-full object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                     </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/1600x800/5A9A9A/FFFFFF?text=April+Homes+LLC'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">&lt;!-- Overlay --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"absolute inset-0 bg-black opacity-40"</span><span class="s3">&gt;&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- Hero Content --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"relative z-10 p-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-4xl md:text-6xl font-bold text-white mb-4 shadow-text"</span><span class="s3">&gt;</span><span class="s4">Building Your Vision, One Home at a Time.</span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-lg md:text-xl text-gray-200 mb-8"</span><span class="s3">&gt;</span><span class="s1">From new builds to custom remodels, we bring your dream space to life.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#contact"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-teal-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-teal-700 transition duration-300"</span><span class="s3">&gt;</span><span class="s4">Get a Free Consultation</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- About Us Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"about"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-16 md:py-24 bg-white"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-6 max-w-4xl text-center"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl md:text-4xl font-bold text-gray-900 mb-6"</span><span class="s3">&gt;</span><span class="s4">About April Home Studio</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-lg text-gray-700 leading-relaxed"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>We are a premier Design and Build company dedicated to exceptional craftsmanship and client satisfaction. April Home Studio specializes in a wide range of services including custom new builds, complete home remodeling, stylish ADUs (Accessory Dwelling Units), bespoke kitchen cabinets, and beautiful hardscape design. Whatever your project, our team has the expertise to deliver outstanding results.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Services Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"services"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-16 md:py-24 bg-gray-50"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12"</span><span class="s3">&gt;</span><span class="s4">Our Services</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Service Card 1 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery-new-construction"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/E0F2F1/333333?text=New+Construction"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"New construction site"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-full h-48 object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                             </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"p-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-semibold text-gray-900 mb-2"</span><span class="s3">&gt;</span><span class="s1">New Construction</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Building your custom dream home from the ground up, with attention to every detail.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Service Card 2 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery-remodeling"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/B2DFDB/333333?text=Home+Remodeling"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"Modern remodeled kitchen"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-full h-48 object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                             </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"p-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-semibold text-gray-900 mb-2"</span><span class="s3">&gt;</span><span class="s1">Home Remodeling</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Transforming your existing space into a functional and beautiful new environment.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Service Card 3 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery-other"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/80CBC4/333333?text=ADUs"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"Accessory Dwelling Unit"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-full h-48 object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                             </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"p-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-semibold text-gray-900 mb-2"</span><span class="s3">&gt;</span><span class="s1">Accessory Dwelling Units (ADUs)</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Adding value and flexible living space to your property with a custom-built ADU.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Service Card 4 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery-kitchens"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/4DB6AC/FFFFFF?text=Kitchen+Cabinets"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"Custom kitchen cabinets"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-full h-48 object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                             </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"p-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-semibold text-gray-900 mb-2"</span><span class="s3">&gt;</span><span class="s1">Custom Kitchen Cabinets</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-700"</span><span class="s3">&gt;</span><span class="s1">High-quality, custom-designed cabinets to create the kitchen of your dreams.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Service Card 5 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery-other"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/26A69A/FFFFFF?text=Hardscape"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"Stone patio and hardscaping"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-full h-48 object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                             </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"p-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-xl font-semibold text-gray-900 mb-2"</span><span class="s3">&gt;</span><span class="s1">Hardscape &amp; Landscaping</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Creating beautiful and durable outdoor living spaces, patios, and walkways.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Service Card 6 --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"#gallery-other"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/00897B/FFFFFF?text=And+More"</span><span class="s4"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">alt</span><span class="s3">=</span><span class="s5">"More services"</span><span class="s1"><span class="Apple-converted-space"> </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                             </span></span><span class="s2">class</span><span class="s3">=</span><span class="s5">"w-full h-48 object-cover"</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                             </span></span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"p-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-xl font-semibold text-gray-900 mb-2"</span><span class="s3">&gt;</span><span class="s4">And More</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-gray-700"</span><span class="s3">&gt;</span><span class="s1">Have a unique project? Contact us to discuss your ideas and how we can help.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Gallery Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"gallery"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-16 md:py-24 bg-white"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12"</span><span class="s3">&gt;</span><span class="s4">Our Projects</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- New Construction Gallery --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"gallery-new-construction"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl md:text-3xl font-semibold text-gray-800 mb-6 pt-12"</span><span class="s3">&gt;</span><span class="s4">New Construction</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 1:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>1. Upload your image</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>2. Paste the direct image link in the 'src' attribute below, replacing the placehold.co link.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/B0BEC5/FFFFFF?text=New+Build+1"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"New Construction Project 1"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 2:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/B0BEC5/FFFFFF?text=New+Build+2"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"New Construction Project 2"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 3:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/B0BEC5/FFFFFF?text=New+Build+3"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"New Construction Project 3"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Home Remodeling Gallery --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"gallery-remodeling"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl md:text-3xl font-semibold text-gray-800 mb-6 pt-12"</span><span class="s3">&gt;</span><span class="s4">Home Remodeling</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 4:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/90A4AE/FFFFFF?text=Remodel+1"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Remodeling Project 1"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 5:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/90A4AE/FFFFFF?text=Remodel+2"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Remodeling Project 2"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 6:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/90A4AE/FFFFFF?text=Remodel+3"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Remodeling Project 3"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Kitchen Cabinets Gallery --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"gallery-kitchens"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl md:text-3xl font-semibold text-gray-800 mb-6 pt-12"</span><span class="s3">&gt;</span><span class="s4">Kitchen Cabinets</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 7:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/78909C/FFFFFF?text=Kitchen+1"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Kitchen Project 1"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 8:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/78909C/FFFFFF?text=Kitchen+2"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Kitchen Project 2"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 9:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/78909C/FFFFFF?text=Kitchen+3"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Kitchen Project 3"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">&lt;!-- Other Projects Gallery --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"gallery-other"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-2xl md:text-3xl font-semibold text-gray-800 mb-6 pt-12"</span><span class="s3">&gt;</span><span class="s4">Other Projects (ADUs, Hardscape &amp; More)</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 10:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/607D8B/FFFFFF?text=ADU+Project"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Other Project 1"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 11:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/546E7A/FFFFFF?text=Hardscape+Project"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Other Project 2"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s10">&lt;!--<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>IMAGE SLOT 12:<span class="Apple-converted-space"> </span></span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                      </span>Paste your direct image link in the 'src' attribute below.</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">                    </span>--&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://placehold.co/600x400/455A64/FFFFFF?text=Misc+Project"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Other Project 3"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"rounded-lg shadow-md w-full h-full object-cover aspect-video hover:shadow-xl transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s1">&lt;!-- Contact Section --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">section</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"contact"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"py-16 md:py-24 bg-teal-700 text-white"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-6"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"grid grid-cols-1 md:grid-cols-2 gap-12 items-center"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Contact Info --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"max-w-md"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-3xl md:text-4xl font-bold mb-6"</span><span class="s3">&gt;</span><span class="s1">Get in Touch</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"text-lg text-teal-100 mb-6"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span>Ready to start your next project? Contact us today for a free, no-obligation consultation. We look forward to hearing from you!</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"space-y-4"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"flex items-center text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">svg</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-6 h-6 mr-3 text-teal-300"</span><span class="s4"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s4"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s4"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s4"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s3">&gt;&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;&lt;/</span><span class="s6">svg</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">(555) 123-4567</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"flex items-center text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">svg</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-6 h-6 mr-3 text-teal-300"</span><span class="s4"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s4"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s4"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s4"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s3">&gt;&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;&lt;/</span><span class="s6">svg</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">contact@aprilhomestudio.com</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"flex items-center text-lg"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">svg</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-6 h-6 mr-3 text-teal-300"</span><span class="s4"> </span><span class="s2">fill</span><span class="s3">=</span><span class="s1">"none"</span><span class="s4"> </span><span class="s2">stroke</span><span class="s3">=</span><span class="s1">"currentColor"</span><span class="s4"> </span><span class="s2">viewBox</span><span class="s3">=</span><span class="s1">"0 0 24 24"</span><span class="s4"> </span><span class="s2">xmlns</span><span class="s3">=</span><span class="s1">"http://www.w3.org/2000/svg"</span><span class="s3">&gt;&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;&lt;</span><span class="s6">path</span><span class="s4"> </span><span class="s2">stroke-linecap</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-linejoin</span><span class="s3">=</span><span class="s1">"round"</span><span class="s4"> </span><span class="s2">stroke-width</span><span class="s3">=</span><span class="s1">"2"</span><span class="s4"> </span><span class="s2">d</span><span class="s3">=</span><span class="s1">"M15 11a3 3 0 11-6 0 3 3 0 016 0z"</span><span class="s3">&gt;&lt;/</span><span class="s6">path</span><span class="s3">&gt;&lt;/</span><span class="s6">svg</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">span</span><span class="s3">&gt;</span><span class="s1">Your City, State 12345</span><span class="s3">&lt;/</span><span class="s6">span</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s1">&lt;!-- Contact Form --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-white p-8 rounded-lg shadow-2xl"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">form</span><span class="s1"> </span><span class="s2">id</span><span class="s3">=</span><span class="s5">"contact-form"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">label</span><span class="s4"> </span><span class="s2">for</span><span class="s3">=</span><span class="s1">"name"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block text-gray-700 font-semibold mb-2"</span><span class="s3">&gt;</span><span class="s4">Name</span><span class="s3">&lt;/</span><span class="s6">label</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"text"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"name"</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"name"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500"</span><span class="s4"> </span><span class="s2">required</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">label</span><span class="s4"> </span><span class="s2">for</span><span class="s3">=</span><span class="s1">"email"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block text-gray-700 font-semibold mb-2"</span><span class="s3">&gt;</span><span class="s4">Email</span><span class="s3">&lt;/</span><span class="s6">label</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">input</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"email"</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"email"</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"email"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500"</span><span class="s4"> </span><span class="s2">required</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mb-4"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">label</span><span class="s4"> </span><span class="s2">for</span><span class="s3">=</span><span class="s1">"message"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"block text-gray-700 font-semibold mb-2"</span><span class="s3">&gt;</span><span class="s4">Message</span><span class="s3">&lt;/</span><span class="s6">label</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">textarea</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"message"</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"message"</span><span class="s4"> </span><span class="s2">rows</span><span class="s3">=</span><span class="s1">"5"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500"</span><span class="s4"> </span><span class="s2">required</span><span class="s3">&gt;&lt;/</span><span class="s6">textarea</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"text-right"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;</span><span class="s6">button</span><span class="s4"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"submit"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition duration-300"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                    </span>Send Message</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                                </span></span><span class="s3">&lt;/</span><span class="s6">button</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;/</span><span class="s6">form</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s1">&lt;!-- Form submission message --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">                        </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"form-message"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"mt-4 text-center text-gray-700"</span><span class="s3">&gt;&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">section</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">main</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Footer --&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">footer</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"bg-gray-800 text-gray-400 py-12"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s4"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container mx-auto px-6 text-center"</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">&amp;copy; 2025 April Home Studio. All Rights Reserved.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"mt-2"</span><span class="s3">&gt;</span><span class="s1">Website designed to be awesome.</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">&lt;!-- Add social media links here if you have them --&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">footer</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- JavaScript for Mobile Menu and Form --&gt;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener(</span><span class="s7">'DOMContentLoaded'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Mobile menu toggle</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> menuToggle = document.getElementById(</span><span class="s7">'menu-toggle'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> mobileMenu = document.getElementById(</span><span class="s7">'mobile-menu'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>menuToggle.addEventListener(</span><span class="s7">'click'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>mobileMenu.classList.toggle(</span><span class="s7">'menu-hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Close menu when a link is clicked</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>mobileMenu.querySelectorAll(</span><span class="s7">'a'</span><span class="s1">).forEach(link =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>link.addEventListener(</span><span class="s7">'click'</span><span class="s1">, () =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>mobileMenu.classList.add(</span><span class="s7">'menu-hidden'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">            </span></span><span class="s1">// Contact form handling (dummy)</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> contactForm = document.getElementById(</span><span class="s7">'contact-form'</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s11">const</span><span class="s1"> formMessage = document.getElementById(</span><span class="s7">'form-message'</span><span class="s1">);</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>contactForm.addEventListener(</span><span class="s7">'submit'</span><span class="s1">, (e) =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>e.preventDefault();</span></p>
-<p class="p7"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">// ---</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// In a real website, you would send this data to a server.</span></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// For this example, we'll just show a success message.</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s10">// ---</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span>formMessage.textContent = </span><span class="s1">'Thank you for your message! We will be in touch soon.'</span><span class="s4">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">                </span>formMessage.className = </span><span class="s1">'mt-4 text-center text-green-700 font-semibold'</span><span class="s4">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>contactForm.reset();</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p6"><span class="s4"><span class="Apple-converted-space">                </span></span><span class="s1">// Hide message after 5 seconds</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                    </span>formMessage.textContent = </span><span class="s7">''</span><span class="s1">;</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">                </span>}, </span><span class="s12">5000</span><span class="s1">);</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
-<p class="p7"><span class="s9"></span><br></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Company Logo/Name -->
+            <a href="#" class="text-2xl font-bold text-teal-700">
+                April Home Studio
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-teal-700 transition duration-300">About</a>
+                <a href="#services" class="text-gray-600 hover:text-teal-700 transition duration-300">Services</a>
+                <a href="#gallery" class="text-gray-600 hover:text-teal-700 transition duration-300">Gallery</a>
+                <a href="#contact" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300">Contact Us</a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="md:hidden menu-hidden bg-white shadow-lg">
+            <a href="#about" class="block px-6 py-3 text-gray-600 hover:bg-teal-50 transition duration-300">About</a>
+            <a href="#services" class="block px-6 py-3 text-gray-600 hover:bg-teal-50 transition duration-300">Services</a>
+            <a href="#gallery" class="block px-6 py-3 text-gray-600 hover:bg-teal-50 transition duration-300">Gallery</a>
+            <a href="#contact" class="block px-6 py-3 bg-teal-600 text-white hover:bg-teal-700 transition duration-300">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="https://placehold.co/1600x800/5A9A9A/FFFFFF?text=Modern+Home+Exterior" 
+                     alt="Modern home exterior" 
+                     class="w-full h-full object-cover"
+                     onerror="this.src='https://placehold.co/1600x800/5A9A9A/FFFFFF'; this.onerror=null;">
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="relative z-10 p-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 shadow-text">Exceptional Design. Unmatched Craftsmanship.</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8">Your premier partner for custom builds, remodels, and bespoke cabinetry.</p>
+                <a href="#contact" class="bg-teal-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-teal-700 transition duration-300">Get a Free Consultation</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- About Text -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About April Home Studio</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        We are a premier Design and Build company dedicated to exceptional craftsmanship and client satisfaction. April Home Studio specializes in a wide range of services including custom new builds, complete home remodeling, stylish ADUs (Accessory Dwelling Units), bespoke kitchen cabinets, and beautiful hardscape design. Whatever your project, our team has the expertise to deliver outstanding results.
+                    </p>
+                </div>
+                <!-- About Image -->
+                <div>
+                    <!-- 
+                      IMAGE SLOT: 
+                      Paste your 'About Us' image link in the 'src' attribute below.
+                      This could be a photo of your team, your workshop, or a signature project.
+                    -->
+                    <img src="https://placehold.co/600x450/78909C/FFFFFF?text=Stylish+Interior+Design" 
+                         alt="April Home Studio team or workshop" 
+                         class="rounded-lg shadow-xl w-full h-full object-cover aspect-[4/3]">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service Card 1 -->
+                    <a href="#gallery-new-construction" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/E0F2F1/333333?text=New+Home+Build" 
+                             alt="New construction site" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">New Construction</h3>
+                            <p class="text-gray-700">Building your custom dream home from the ground up, with attention to every detail.</p>
+                        </div>
+                    </a>
+
+                    <!-- Service Card 2 -->
+                    <a href="#gallery-remodeling" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/B2DFDB/333333?text=Remodeled+Kitchen" 
+                             alt="Modern remodeled kitchen" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Home Remodeling</h3>
+                            <p class="text-gray-700">Transforming your existing space into a functional and beautiful new environment.</p>
+                        </div>
+                    </a>
+
+                    <!-- Service Card 3 -->
+                    <a href="#gallery-other" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/80CBC4/333333?text=Cozy+ADU+Exterior" 
+                             alt="Accessory Dwelling Unit" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Accessory Dwelling Units (ADUs)</h3>
+                            <p class="text-gray-700">Adding value and flexible living space to your property with a custom-built ADU.</p>
+                        </div>
+                    </a>
+
+                    <!-- Service Card 4 -->
+                    <a href="#gallery-kitchens" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/4DB6AC/FFFFFF?text=Custom+Cabinetry" 
+                             alt="Custom kitchen cabinets" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Custom Kitchen Cabinets</h3>
+                            <p class="text-gray-700">High-quality, custom-designed cabinets to create the kitchen of your dreams.</p>
+                        </div>
+                    </a>
+
+                    <!-- Service Card 5 -->
+                    <a href="#gallery-other" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/26A69A/FFFFFF?text=Stone+Patio" 
+                             alt="Stone patio and hardscaping" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Hardscape & Landscaping</h3>
+                            <p class="text-gray-700">Creating beautiful and durable outdoor living spaces, patios, and walkways.</p>
+                        </div>
+                    </a>
+
+                    <!-- Service Card 6 -->
+                    <a href="#gallery-other" class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/00897B/FFFFFF?text=Design+Blueprint" 
+                             alt="More services" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Service'; this.onerror=null;">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">And More</h3>
+                            <p class="text-gray-700">Have a unique project? Contact us to discuss your ideas and how we can help.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic text-lg mb-6">"April Home Studio completely transformed our living space! Their attention to detail and creative vision exceeded all our expectations. We finally have a home that feels like us."</p>
+                        <p class="text-gray-900 font-semibold">- Sarah & Tom P.</p>
+                        <p class="text-gray-500">San Jose, CA</p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic text-lg mb-6">"Working with the team was a dream. They were professional, listened to our needs, and delivered a stunning design on time and within budget. Highly recommend!"</p>
+                        <p class="text-gray-900 font-semibold">- Michael B.</p>
+                        <p class="text-gray-500">Bay Area, CA</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-teal-700 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Contact Info -->
+                    <div class="max-w-md">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+                        <p class="text-lg text-teal-100 mb-6">
+                            Ready to start your next project? Contact us today for a free, no-obligation consultation. We look forward to hearing from you!
+                        </p>
+                        <div class="space-y-4">
+                            <p class="flex items-center text-lg">
+                                <svg class="w-6 h-6 mr-3 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <span>(555) 123-4567</span>
+                            </p>
+                            <p class="flex items-center text-lg">
+                                <svg class="w-6 h-6 mr-3 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span>hello@aprilhomestudio.com</span>
+                            </p>
+                            <p class="flex items-center text-lg">
+                                <svg class="w-6 h-6 mr-3 text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>Your City, State 12345</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-2xl">
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required></textarea>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Form submission message -->
+                        <p id="form-message" class="mt-4 text-center text-gray-700"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 April Home Studio. All Rights Reserved.</p>
+            <p class="mt-2">Website designed to be awesome.</p>
+            <!-- Add social media links here if you have them -->
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Form -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('menu-hidden');
+            });
+
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('menu-hidden');
+                });
+            });
+
+            // Contact form handling (dummy)
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // ---
+                // In a real website, you would send this data to a server.
+                // For this example, we'll just show a success message.
+                // ---
+
+                formMessage.textContent = 'Thank you for your message! We will be in touch soon.';
+                formMessage.className = 'mt-4 text-center text-green-700 font-semibold';
+                contactForm.reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                }, 5000);
+            });
+        });
+    </script>
+
 </body>
 </html>
