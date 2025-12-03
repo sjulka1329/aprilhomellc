@@ -1,84 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>April Homes LLC - Design & Build</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Typography Settings */
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300; /* Lighter font weight for elegance */
-        }
-        h1, h2, h3, h4, .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Menu Utilities */
-        .menu-hidden {
-            display: none;
-        }
-
-        /* Slideshow Animation */
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 2s ease-in-out; /* Slower, luxurious fade */
-            z-index: 0;
-            transform: scale(1.05); /* Slight zoom effect */
-        }
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 1;
-            transform: scale(1);
-            transition: opacity 2s ease-in-out, transform 6s ease-out;
-        }
-        
-        /* Dark overlay for text readability */
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
-            z-index: 2;
-        }
-    </style>
-</head>
 <body class="bg-white text-zinc-800 antialiased selection:bg-black selection:text-white">
 
-    <header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100">
-        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif tracking-widest font-bold text-black uppercase">
+    <header class="absolute top-0 left-0 w-full z-50 border-b border-white/10">
+        <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            
+            <a href="#" onclick="window.location.reload(); return false;" class="text-3xl md:text-4xl font-serif tracking-widest font-bold text-white uppercase cursor-pointer hover:opacity-80 transition">
                 April Homes
             </a>
 
-            <div class="hidden md:flex space-x-8 text-xs tracking-[0.2em] font-medium uppercase text-gray-500">
-                <a href="#about" class="hover:text-black transition duration-500">About</a>
-                <a href="#services" class="hover:text-black transition duration-500">Services</a>
-                <a href="#gallery" class="hover:text-black transition duration-500">Portfolio</a>
-                <a href="#contact" class="hover:text-black transition duration-500">Contact</a>
+            <div class="hidden md:flex space-x-8 text-xs tracking-[0.2em] font-medium uppercase text-white/80">
+                <a href="#about" class="hover:text-white transition duration-500">About</a>
+                <a href="#services" class="hover:text-white transition duration-500">Services</a>
+                <a href="#gallery" class="hover:text-white transition duration-500">Portfolio</a>
+                <a href="#contact" class="hover:text-white transition duration-500">Contact</a>
             </div>
 
             <div class="md:hidden">
-                <button id="menu-toggle" class="text-black focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
         </nav>
 
-        <div id="mobile-menu" class="md:hidden menu-hidden bg-white border-t border-gray-100 absolute w-full left-0">
+        <div id="mobile-menu" class="md:hidden menu-hidden bg-white absolute w-full left-0 top-full shadow-xl">
             <a href="#about" class="block px-8 py-4 text-sm uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-black transition">About</a>
             <a href="#services" class="block px-8 py-4 text-sm uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-black transition">Services</a>
             <a href="#gallery" class="block px-8 py-4 text-sm uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-black transition">Portfolio</a>
@@ -103,9 +48,8 @@
 
             <div class="hero-overlay"></div>
             
-            <div class="relative z-10 px-6 max-w-4xl">
-                <p class="text-white text-xs md:text-sm tracking-[0.3em] uppercase mb-6 opacity-90">Est. 2025 &bull; Saratoga, California</p>
-                <h1 class="text-5xl md:text-7xl text-white mb-8 leading-tight italic font-serif">
+            <div class="relative z-10 px-6 max-w-4xl mt-20"> <p class="text-white text-xs md:text-sm tracking-[0.3em] uppercase mb-6 opacity-90">Est. 2025 &bull; Saratoga, California</p>
+                <h1 class="text-5xl md:text-8xl text-white mb-8 leading-tight italic font-serif">
                     Beyond <br> Imagination
                 </h1>
                 <a href="#contact" class="inline-block border border-white text-white px-10 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-500">
@@ -120,7 +64,7 @@
                 <h2 class="text-4xl md:text-5xl mb-10 text-black">Excellence in Every Detail</h2>
                 <div class="w-16 h-px bg-black mx-auto mb-10"></div>
                 <p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-                    April Homes LLC is a premier Design & Build firm dedicated to the art of living. From custom new builds in Palo Alto to bespoke cabinetry in Saratoga, we specialize in translating vision into reality. We don't just build houses; we curate environments that elevate your lifestyle.
+                    April Homes LLC is a premier Design & Build firm dedicated to uncompromising craftsmanship. From custom new builds to bespoke cabinetry, we specialize in translating vision into reality. We do not merely construct homes; we curate sanctuaries designed to endure.
                 </p>
             </div>
         </section>
@@ -137,6 +81,14 @@
                         <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
                     </div>
 
+                     <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer">
+                        <h3 class="text-2xl mb-4 italic font-serif">Bespoke Cabinetry</h3>
+                        <p class="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed mb-6">
+                            Custom designed kitchens and millwork tailored to your specific needs.
+                        </p>
+                        <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
+                    </div>
+                    
                     <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer">
                         <h3 class="text-2xl mb-4 italic font-serif">Luxury Remodeling</h3>
                         <p class="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed mb-6">
@@ -145,13 +97,7 @@
                         <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
                     </div>
 
-                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer">
-                        <h3 class="text-2xl mb-4 italic font-serif">Bespoke Cabinetry</h3>
-                        <p class="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed mb-6">
-                            Custom designed kitchens and millwork tailored to your specific needs.
-                        </p>
-                        <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
-                    </div>
+                   
 
                 </div>
             </div>
@@ -168,13 +114,13 @@
                     <div class="relative group h-80 overflow-hidden">
                         <img src="images/NewConstructionPaloAlto.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop';">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Palo Alto Estate</span>
+                            <span class="text-white text-xl font-serif italic">Modern Craftsman</span>
                         </div>
                     </div>
                     <div class="relative group h-80 overflow-hidden">
                         <img src="images/CustomCabinet.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1556912173-3db996ea8c3f?q=80&w=2000&auto=format&fit=crop';">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Rift Oak Kitchen</span>
+                            <span class="text-white text-xl font-serif italic">Rift White Oak Kitchen</span>
                         </div>
                     </div>
                     <div class="relative group h-80 overflow-hidden">
@@ -302,4 +248,3 @@
         });
     </script>
 </body>
-</html>
