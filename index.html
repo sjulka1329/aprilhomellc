@@ -173,7 +173,7 @@
                     </div>
 
                       <div class="relative group h-80 overflow-hidden">
-                        <img src="images/OpenConceptLiving.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2000&auto=format&fit=crop';">
+                        <img src="images/OpenConceptLiving.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2000&auto=format&fit=crop';">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
                             <span class="text-white text-xl font-serif italic">Open Concept Living</span>
                         </div>
@@ -228,24 +228,39 @@
             </div>
 
             <div class="w-full md:w-1/2 bg-white p-16 md:p-24 flex flex-col justify-center">
-                <form id="contact-form" class="space-y-6">
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name</label>
-                        <input type="text" class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-black transition bg-transparent" placeholder="John Doe" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
-                        <input type="email" class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-black transition bg-transparent" placeholder="john@example.com" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message</label>
-                        <textarea rows="4" class="w-full border-b border-gray-300 py-3 focus:outline-none focus:border-black transition bg-transparent" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="bg-black text-white px-10 py-4 text-xs uppercase tracking-[0.2em] hover:bg-gray-800 transition duration-300 mt-4">
-                        Send Message
-                    </button>
-                    <p id="form-message" class="text-sm mt-4 text-green-700 hidden"></p>
-                </form>
+                <form id="contact-form" action="https://formsubmit.co/ajax/aprilhomes4us@gmail.com" method="POST" class="bg-white p-8 rounded-lg shadow-2xl space-y-4">
+    
+    <input type="hidden" name="_subject" value="New Lead: April Homes Website">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div>
+        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+        <input type="text" name="name" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+    </div>
+    
+    <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+        <input type="email" name="email" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+    </div>
+
+    <div>
+        <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+        <input type="tel" name="phone" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500">
+    </div>
+    
+    <div>
+        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+        <textarea name="message" rows="5" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required></textarea>
+    </div>
+    
+    <div class="text-right">
+        <button type="submit" id="submit-btn" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition duration-300">
+            Send Message
+        </button>
+    </div>
+
+    <p id="form-message" class="text-center text-green-600 font-bold mt-4 hidden"></p>
+</form>
             </div>
         </section>
     </main>
@@ -256,37 +271,26 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu logic
+            
+            // --- 1. MOBILE MENU LOGIC ---
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('menu-hidden');
-            });
-
-            // Close menu on link click
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('menu-hidden');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('menu-hidden');
                 });
-            });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('menu-hidden');
+                    });
+                });
+            }
 
-            // Contact form logic
-            const contactForm = document.getElementById('contact-form');
-            const formMessage = document.getElementById('form-message');
-
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                formMessage.textContent = 'Message Sent. We will contact you shortly.';
-                formMessage.classList.remove('hidden');
-                contactForm.reset();
-                setTimeout(() => formMessage.classList.add('hidden'), 5000);
-            });
-
-            // Slideshow Logic
+            // --- 2. HERO SLIDESHOW LOGIC ---
             const slides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
-            const slideInterval = 6000;
+            const slideInterval = 5000; 
 
             function nextSlide() {
                 slides[currentSlide].classList.remove('active');
@@ -296,6 +300,56 @@
 
             if(slides.length > 0) {
                 setInterval(nextSlide, slideInterval);
+            }
+
+            // --- 3. NEW CONTACT FORM LOGIC (AJAX) ---
+            const form = document.getElementById('contact-form');
+            const message = document.getElementById('form-message');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Stop page reload
+
+                    // Change button to indicate loading
+                    const originalBtnText = submitBtn.innerText;
+                    submitBtn.innerText = "Sending...";
+                    submitBtn.disabled = true;
+
+                    const formData = new FormData(form);
+
+                    // Send data to FormSubmit in background
+                    fetch("https://formsubmit.co/ajax/aprilhomes4us@gmail.com", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Success! Show your specific message
+                        message.textContent = 'Message Sent. We will contact you shortly.';
+                        message.classList.remove('hidden'); 
+                        message.classList.remove('text-red-600');
+                        message.classList.add('text-green-600');
+                        
+                        // Clear form
+                        form.reset();
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            message.classList.add('hidden');
+                        }, 5000);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        message.textContent = "Something went wrong. Please try again.";
+                        message.classList.remove('hidden');
+                        message.classList.add('text-red-600');
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                    });
+                });
             }
         });
     </script>
