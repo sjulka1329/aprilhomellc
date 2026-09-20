@@ -1,358 +1,909 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>April Homes LLC - Design & Build</title>
+    <title>April Homes LLC - Luxury Design &amp; Build</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Typography: Inter & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#C5A059',
+                            goldLight: '#E8D5B5',
+                            charcoal: '#0D0D0D',
+                            warmGray: '#1E1E1E',
+                            cream: '#FAF9F6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* Typography Settings */
         body {
             font-family: 'Inter', sans-serif;
-            font-weight: 300; /* Lighter font weight for elegance */
+            font-weight: 300;
         }
+
         h1, h2, h3, h4, .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Menu Utilities */
-        .menu-hidden {
-            display: none;
+
+        /* 3D Perspective Cylindrical Stage */
+        .carousel-stage {
+            perspective: 1400px;
+            perspective-origin: 50% 50%;
+            overflow: hidden;
         }
 
-        /* Slideshow Animation */
+        .carousel-cylinder {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .carousel-item {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 290px;
+            height: 195px;
+            margin-left: -145px;
+            margin-top: -97.5px;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            border-radius: 2px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+            transition: filter 0.3s ease, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @media (min-width: 768px) {
+            .carousel-item {
+                width: 400px;
+                height: 270px;
+                margin-left: -200px;
+                margin-top: -135px;
+            }
+        }
+
+        /* Hero Slideshow cross-fade */
         .hero-slide {
             position: absolute;
             inset: 0;
             opacity: 0;
-            transition: opacity 2s ease-in-out; /* Slower, luxurious fade */
-            z-index: 0;
-            transform: scale(1.05); /* Slight zoom effect */
+            transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(1.05);
+            will-change: opacity, transform;
         }
+
         .hero-slide.active {
             opacity: 1;
-            z-index: 1;
             transform: scale(1);
-            transition: opacity 2s ease-in-out, transform 6s ease-out;
+            transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out;
         }
-        
-        /* Dark overlay for text readability */
+
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 100%);
             z-index: 2;
+        }
+
+        /* Dropdown Menu Utility for RH Header Style */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dropdown-parent:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-white text-zinc-800 antialiased selection:bg-black selection:text-white">
+<body class="bg-white text-zinc-900 antialiased selection:bg-black selection:text-white flex flex-col min-h-screen">
 
-    <header class="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100">
-        <nav class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif tracking-widest font-bold text-black uppercase">
-                April Homes
-            </a>
+    <!-- Top Announcement Bar -->
+    <div class="bg-neutral-950 text-neutral-400 text-[10px] tracking-[0.25em] uppercase py-2 px-6 border-b border-neutral-900 flex justify-between items-center z-50 relative">
+        <span class="truncate">Saratoga &bull; Palo Alto &bull; Los Gatos &bull; San Jose</span>
+        <div class="flex items-center space-x-5">
+            <span class="hidden md:inline font-light">Custom Architectural Design &bull; Build Firm</span>
+            <span class="hidden md:inline text-neutral-700">|</span>
+            <a href="mailto:contact@aprilhomestudio.com" class="text-neutral-300 hover:text-white transition">contact@aprilhomestudio.com</a>
+        </div>
+    </div>
 
-            <div class="hidden md:flex space-x-8 text-xs tracking-[0.2em] font-medium uppercase text-gray-500">
-                <a href="#about" class="hover:text-black transition duration-500">About</a>
-                <a href="#services" class="hover:text-black transition duration-500">Services</a>
-                <a href="#gallery" class="hover:text-black transition duration-500">Portfolio</a>
-                <a href="#contact" class="hover:text-black transition duration-500">Contact</a>
-            </div>
+    <!-- RH-Style Header Navigation -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-neutral-100">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center relative">
 
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-black focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+            <!-- Left: Hamburger Drawer Trigger (About, Contact & Quick Navigation) -->
+            <div class="flex items-center space-x-4">
+                <button id="hamburger-toggle" class="text-black focus:outline-none flex items-center gap-2.5 p-1 group cursor-pointer" aria-label="Toggle Navigation Menu">
+                    <span class="w-5 flex flex-col gap-1">
+                        <span class="h-px w-full bg-black transition duration-300 group-hover:w-3/4"></span>
+                        <span class="h-px w-full bg-black"></span>
+                        <span class="h-px w-full bg-black transition duration-300 group-hover:w-1/2"></span>
+                    </span>
+                    <span class="text-[10px] tracking-[0.25em] uppercase font-mono hidden sm:inline text-neutral-600">Menu</span>
                 </button>
             </div>
+
+            <!-- Center: Brand Logo in Luxury Serif Typography -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
+                <button onclick="navigateTo('home', 'hero')" class="text-xl md:text-2xl font-serif tracking-[0.25em] font-bold text-black uppercase cursor-pointer">
+                    April Homes
+                </button>
+                <span class="block text-[7px] tracking-[0.45em] uppercase text-neutral-400 font-mono -mt-0.5">Design &bull; Build</span>
+            </div>
+
+            <!-- Right: Inquire Action Button -->
+            <div>
+                <button onclick="navigateTo('home', 'contact')" class="text-[10px] tracking-[0.25em] uppercase font-mono border border-black px-4 py-2 hover:bg-black hover:text-white transition duration-300 cursor-pointer">
+                    Inquire
+                </button>
+            </div>
+        </div>
+
+        <!-- Sub-Header Navigation Bar (RH Style Architectural Categories) -->
+        <nav class="hidden lg:flex justify-center items-center space-x-10 py-3 border-t border-neutral-100 bg-white text-xs tracking-[0.2em] font-medium uppercase text-neutral-600">
+            
+            <!-- Kitchen with Dropdown (Full Shaker, Rift White Oak) -->
+            <div class="relative dropdown-parent py-1">
+                <button class="hover:text-black transition flex items-center gap-1.5 cursor-pointer">
+                    Kitchen <span class="text-[9px]">&#9662;</span>
+                </button>
+                <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white border border-neutral-200 shadow-xl py-3 z-50 text-left">
+                    <button onclick="navigateTo('gallery', 'full-shaker')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        Full Shaker
+                    </button>
+                    <button onclick="navigateTo('gallery', 'rift-white-oak')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        Rift White Oak
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Spaces (FirePlace First) -->
+            <button onclick="navigateTo('gallery', 'custom-spaces')" class="hover:text-black transition py-1 cursor-pointer">
+                Custom Spaces
+            </button>
+
+            <!-- Vanities -->
+            <button onclick="navigateTo('gallery', 'vanity')" class="hover:text-black transition py-1 cursor-pointer">
+                Vanities
+            </button>
+
+            <!-- Construction with Dropdown -->
+            <div class="relative dropdown-parent py-1">
+                <button class="hover:text-black transition flex items-center gap-1.5 cursor-pointer">
+                    Construction <span class="text-[9px]">&#9662;</span>
+                </button>
+                <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-60 bg-white border border-neutral-200 shadow-xl py-3 z-50 text-left">
+                    <button onclick="navigateTo('gallery', 'custom-home')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        Custom Home
+                    </button>
+                    <button onclick="navigateTo('gallery', 'remodel')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        Remodel
+                    </button>
+                    <button onclick="navigateTo('gallery', 'adu')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        ADU
+                    </button>
+                    <button onclick="navigateTo('gallery', 'covered-spaces')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        Covered Spaces
+                    </button>
+                    <button onclick="navigateTo('gallery', 'hardscape')" class="block w-full px-6 py-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-black hover:bg-neutral-50 transition text-left cursor-pointer">
+                        Hardscape
+                    </button>
+                </div>
+            </div>
+
         </nav>
 
-        <div id="mobile-menu" class="md:hidden menu-hidden bg-white border-t border-gray-100 absolute w-full left-0">
-            <a href="#about" class="block px-8 py-4 text-sm uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-black transition">About</a>
-            <a href="#services" class="block px-8 py-4 text-sm uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-black transition">Services</a>
-            <a href="#gallery" class="block px-8 py-4 text-sm uppercase tracking-widest text-gray-600 hover:bg-gray-50 hover:text-black transition">Portfolio</a>
-            <a href="#contact" class="block px-8 py-4 text-sm uppercase tracking-widest bg-black text-white hover:bg-zinc-800 transition">Contact Us</a>
+        <!-- Slide-out Left Drawer for About, Contact & Living Spaces -->
+        <div id="left-drawer" class="fixed inset-y-0 left-0 w-80 bg-neutral-950 text-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between p-8">
+            <div>
+                <div class="flex justify-between items-center mb-10 border-b border-neutral-800 pb-4">
+                    <span class="text-xs uppercase tracking-[0.3em] font-mono text-neutral-400">Navigation</span>
+                    <button id="drawer-close" class="text-neutral-400 hover:text-white text-3xl font-light focus:outline-none cursor-pointer">&times;</button>
+                </div>
+
+                <div class="space-y-6 text-xs uppercase tracking-[0.25em] font-light">
+                    <button onclick="navigateTo('home', 'hero'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Home</button>
+                    <button onclick="navigateTo('home', 'about'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">About</button>
+                    <button onclick="navigateTo('home', 'contact'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Contact</button>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-6 text-[10px] text-neutral-400 uppercase tracking-widest font-mono">
+                Saratoga, California &bull; April Homes LLC
+            </div>
         </div>
+        <div id="drawer-backdrop" class="fixed inset-0 bg-black/60 z-40 hidden backdrop-blur-sm"></div>
     </header>
 
-    <main>
-        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-            
-            <div id="hero-slideshow">
-                <div class="hero-slide active">
-                    <img src="images/NewConstructionPaloAlto.png" alt="Luxury Build" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop';">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/NewConstruction2.png" alt="Modern Architecture" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop';">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/OpenConceptLiving.png" alt="Bespoke Interiors" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2070&auto=format&fit=crop';">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/LuxuryBathroomRemodel1.png" alt="Luxury Bathroom Remodel" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop';">
-                </div>
-                <div class="hero-slide">
-                    <img src="images/LuxuryBathroomRemodel3.png" alt="More Bathroom Remodel" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop';">
-                </div>
+    <!-- Main View Container -->
+    <main id="main-view" class="flex-grow transition-opacity duration-300">
 
- <div class="hero-slide">
-                    <img src="images/BathroomRemodel.png" alt="More Bathroom Remodel" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop';">
+        <!-- Multi-Slide Hero with Clickable Indicators & 3 Actions -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden bg-neutral-950">
+            <div id="hero-slideshow" class="absolute inset-0 z-0">
+                <!-- Slide 1: Custom Cabinets -->
+                <div class="hero-slide active">
+                    <img src="images/Custom%20Cabinets/Kitchen/RiftWhiteOak/CoverPhoto-Kitchen.jpg" alt="Custom Cabinets" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1556912173-3db996ea8c3f?q=80&w=2000&auto=format&fit=crop';">
                 </div>
-                
+                <!-- Slide 2: Construction -->
+                <div class="hero-slide">
+                    <img src="images/Construction/CustomHome/NewConstructionPaloAlto.png" alt="Custom Construction" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop';">
+                </div>
+                <!-- Slide 3: Open Concept Living -->
+                <div class="hero-slide">
+                    <img src="images/Construction/Covered%20Spaces/OpenConceptLiving.png" alt="Open Concept Living" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2000&auto=format&fit=crop';">
+                </div>
             </div>
 
             <div class="hero-overlay"></div>
             
-            <div class="relative z-10 px-6 max-w-4xl">
-                <p class="text-white text-xs md:text-sm tracking-[0.3em] uppercase mb-6 opacity-90">Est. 2024 &bull; Saratoga, California</p>
-                <h1 class="text-5xl md:text-7xl text-white mb-8 leading-tight italic font-serif">
+            <div class="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
+                <p class="text-white text-xs md:text-sm tracking-[0.35em] uppercase mb-6 opacity-90 font-light">
+                    Saratoga &bull; Palo Alto &bull; Los Gatos &bull; San Jose &bull;Est. 2024
+                </p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight italic font-serif">
                     Beyond <br> Imagination
                 </h1>
-                <a href="#contact" class="inline-block border border-white text-white px-10 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-500">
-                    Start Your Project
-                </a>
+
+                <!-- Direct Call To Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <!-- CTA 1: Custom Cabinets -->
+                    <button onclick="navigateTo('gallery', 'rift-white-oak')" class="w-full sm:w-auto bg-white text-black px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium hover:bg-neutral-200 transition duration-300 shadow-xl cursor-pointer">
+                        Custom Cabinets
+                    </button>
+                    <!-- CTA 2: Construction -->
+                    <button onclick="navigateTo('gallery', 'custom-home')" class="w-full sm:w-auto border border-white text-white px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-500 cursor-pointer">
+                        Construction
+                    </button>
+
+                </div>
             </div>
+
+            <!-- Clickable Pagination Indicator Dots -->
+            <div id="slide-dots" class="absolute bottom-8 left-0 right-0 z-20 flex justify-center space-x-2"></div>
         </section>
 
-        <section id="about" class="py-24 bg-white">
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-white border-b border-neutral-100">
             <div class="container mx-auto px-6 max-w-5xl text-center">
-                <span class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase block mb-4">Who We Are</span>
-                <h2 class="text-4xl md:text-5xl mb-10 text-black">Excellence in Every Detail</h2>
+                <span class="text-xs font-semibold tracking-[0.3em] text-neutral-400 uppercase block mb-4 font-mono">Who We Are</span>
+                <h2 class="text-4xl md:text-5xl mb-8 text-black font-serif">Excellence in Every Detail</h2>
                 <div class="w-16 h-px bg-black mx-auto mb-10"></div>
-                <p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-                    April Homes LLC is a premier Design & Build firm dedicated to uncompromising craftsmanship. From custom new builds to bespoke cabinetry, we specialize in translating vision into reality. We do not merely construct homes; we curate sanctuaries designed to endure.
+                <p class="text-lg md:text-xl text-neutral-600 font-light leading-relaxed max-w-3xl mx-auto">
+                    April Homes LLC is a premier Design &amp; Build firm dedicated to uncompromising craftsmanship. From ground-up custom estates to bespoke cabinetry, we translate architectural vision into enduring reality.
                 </p>
             </div>
         </section>
 
-        <section id="services" class="py-24 bg-zinc-50">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-200 divide-y md:divide-y-0 md:divide-x divide-gray-200 bg-white">
-                    
-                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer">
-                        <h3 class="text-2xl mb-4 italic font-serif">Construction</h3>
-                        <p class="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed mb-6">
-                            Architectural planning and construction of custom estates from the ground up.
-                        </p>
-                        <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
-                    </div>
-
-                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer">
-                        <h3 class="text-2xl mb-4 italic font-serif">Luxury Remodeling</h3>
-                        <p class="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed mb-6">
-                            Transforming existing structures into modern masterpieces of comfort.
-                        </p>
-                        <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
-                    </div>
-
-                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer">
-                        <h3 class="text-2xl mb-4 italic font-serif">Bespoke Cabinetry</h3>
-                        <p class="text-sm text-gray-500 group-hover:text-gray-300 leading-relaxed mb-6">
-                            Custom designed kitchens and millwork tailored to your specific needs.
-                        </p>
-                        <a href="#gallery" class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1">View Projects</a>
-                    </div>
-
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-neutral-50 border-b border-neutral-100">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-semibold tracking-[0.3em] text-neutral-400 uppercase block mb-2 font-mono">Disciplines</span>
+                    <h2 class="text-3xl md:text-4xl text-black font-serif">Comprehensive Design &amp; Build</h2>
                 </div>
-            </div>
-        </section>
 
-        <section id="gallery" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="mb-12">
-            <h2 class="text-4xl text-black">Selected Works</h2>
-            </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-                    <div class="relative group h-80 overflow-hidden">
-                        <img src="images/NewConstructionPaloAlto.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop';">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Modern Craftsman Home</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-neutral-200 divide-y md:divide-y-0 md:divide-x divide-neutral-200 bg-white shadow-sm">
+                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer flex flex-col justify-between" onclick="navigateTo('gallery', 'custom-home')">
+                        <div>
+                            <span class="text-xs font-mono text-neutral-400 group-hover:text-neutral-500 mb-4 block">DISCIPLINE 01</span>
+                            <h3 class="text-2xl mb-4 italic font-serif">Construction</h3>
+                            <p class="text-sm text-neutral-500 group-hover:text-neutral-300 leading-relaxed mb-6 font-light">
+                                Ground-up execution of custom luxury estates, ADUs, and architectural outdoor living pavilions.
+                            </p>
                         </div>
+                        <span class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1 self-center">Explore Construction</span>
                     </div>
 
-                      <div class="relative group h-80 overflow-hidden">
-                        <img src="images/OpenConceptLiving.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2000&auto=format&fit=crop';">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Open Concept Living</span>
+                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer flex flex-col justify-between" onclick="navigateTo('gallery', 'remodel')">
+                        <div>
+                            <span class="text-xs font-mono text-neutral-400 group-hover:text-neutral-500 mb-4 block">DISCIPLINE 02</span>
+                            <h3 class="text-2xl mb-4 italic font-serif">Luxury Remodeling</h3>
+                            <p class="text-sm text-neutral-500 group-hover:text-neutral-300 leading-relaxed mb-6 font-light">
+                                Reconfiguring structures into modern master suites, open-concept great rooms, and spa sanctuaries.
+                            </p>
                         </div>
+                        <span class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1 self-center">Explore Remodels</span>
                     </div>
-                    
-                    <div class="relative group h-80 overflow-hidden">
-                        <img src="images/CustomCabinet.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1556912173-3db996ea8c3f?q=80&w=2000&auto=format&fit=crop';">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Rift Cut White Oak Kitchen Cabinets</span>
+
+                    <div class="p-12 text-center group hover:bg-black hover:text-white transition duration-500 cursor-pointer flex flex-col justify-between" onclick="navigateTo('gallery', 'rift-white-oak')">
+                        <div>
+                            <span class="text-xs font-mono text-neutral-400 group-hover:text-neutral-500 mb-4 block">DISCIPLINE 03</span>
+                            <h3 class="text-2xl mb-4 italic font-serif">Bespoke Cabinetry</h3>
+                            <p class="text-sm text-neutral-500 group-hover:text-neutral-300 leading-relaxed mb-6 font-light">
+                                Custom kitchens, floating vanities, and rift cut white oak millwork tailored to your exact lifestyle.
+                            </p>
                         </div>
-                    </div>
-                  
-                    
-                    <div class="relative group h-80 overflow-hidden">
-                        <img src="images/LuxuryBathroomRemodel.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2000&auto=format&fit=crop';">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Luxury Bathroom Remodel</span>
-                        </div>
-                    </div>
-                  
-                    <div class="relative group h-80 overflow-hidden">
-                        <img src="images/Hardscape.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=2000&auto=format&fit=crop';">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Outdoor Hardscape</span>
-                        </div>
-                    </div>
-                    <div class="relative group h-80 overflow-hidden">
-                        <img src="images/ShakerStyleCbinets.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=2000&auto=format&fit=crop';">
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <span class="text-white text-xl font-serif italic">Full Shaker Cabinets</span>
-                        </div>
+                        <span class="text-xs uppercase tracking-widest border-b border-black group-hover:border-white pb-1 self-center">Explore Millwork</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="flex flex-col md:flex-row h-auto md:h-screen">
-            <div class="w-full md:w-1/2 bg-black text-white p-16 md:p-24 flex flex-col justify-center">
-                <span class="text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-4">Inquiries</span>
-                <h2 class="text-4xl md:text-5xl font-serif mb-8">Get In Touch</h2>
-                <p class="text-gray-400 mb-12 font-light">
-                    Ready to elevate your space? Contact us for a consultation regarding your upcoming project.
+        <!-- Contact Section -->
+        <section id="contact" class="flex flex-col md:flex-row min-h-screen border-b border-neutral-100">
+            <div class="w-full md:w-1/2 bg-black text-white p-12 md:p-24 flex flex-col justify-center">
+                <span class="text-xs font-semibold tracking-[0.3em] text-neutral-500 uppercase mb-4 font-mono">Inquiries</span>
+                <h2 class="text-4xl md:text-5xl font-serif mb-6">Let's Discuss Your Vision</h2>
+                <p class="text-neutral-400 mb-10 font-light leading-relaxed text-sm md:text-base">
+                    Ready to elevate your space? Contact our Saratoga studio for a consultation regarding your custom estate, ADU addition, or bespoke cabinetry project.
                 </p>
-                <div class="space-y-6 text-lg font-light">
-                    <p class="flex items-center"><span class="w-8 border-t border-gray-600 mr-4"></span>contact@aprilhomestudio.com</p>
+                <div class="space-y-4 text-sm font-light text-neutral-300 font-mono text-xs">
+                    <p class="flex items-center"><span class="w-8 border-t border-neutral-700 mr-4"></span>contact@aprilhomestudio.com</p>
+                    <p class="flex items-center"><span class="w-8 border-t border-neutral-700 mr-4"></span>Saratoga, California 95070</p>
+                    <p class="flex items-center"><span class="w-8 border-t border-neutral-700 mr-4"></span>Serving Saratoga, Palo Alto &amp; Greater Bay Area</p>
                 </div>
             </div>
 
-            <div class="w-full md:w-1/2 bg-white p-16 md:p-24 flex flex-col justify-center">
-                <form id="contact-form" action="https://formsubmit.co/ajax/aprilhomes4us@gmail.com" method="POST" class="bg-white p-8 rounded-lg shadow-2xl space-y-4">
-    
-    <input type="hidden" name="_subject" value="New Lead: April Homes Website">
-    <input type="hidden" name="_captcha" value="false">
+            <div class="w-full md:w-1/2 bg-neutral-50 p-12 md:p-24 flex flex-col justify-center">
+                <form id="contact-form" class="space-y-5 max-w-lg w-full mx-auto">
+                    <div>
+                        <label for="name" class="block text-xs uppercase tracking-[0.2em] text-neutral-600 mb-2 font-medium">Name *</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-white border border-neutral-300 text-sm text-zinc-900 focus:outline-none focus:border-black transition" required placeholder="Jane Doe">
+                    </div>
 
-    <div>
-        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
-        <input type="text" name="name" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-    </div>
-    
-    <div>
-        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-        <input type="email" name="email" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-    </div>
+                    <div>
+                        <label for="email" class="block text-xs uppercase tracking-[0.2em] text-neutral-600 mb-2 font-medium">Email *</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-white border border-neutral-300 text-sm text-zinc-900 focus:outline-none focus:border-black transition" required placeholder="jane@example.com">
+                    </div>
 
-    <div>
-        <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
-        <input type="tel" name="phone" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500">
-    </div>
-    
-    <div>
-        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
-        <textarea name="message" rows="5" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500" required></textarea>
-    </div>
-    
-    <div class="text-right">
-        <button type="submit" id="submit-btn" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition duration-300">
-            Send Message
-        </button>
-    </div>
+                    <div>
+                        <label for="phone" class="block text-xs uppercase tracking-[0.2em] text-neutral-600 mb-2 font-medium">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-white border border-neutral-300 text-sm text-zinc-900 focus:outline-none focus:border-black transition" placeholder="(408) 555-0199">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-xs uppercase tracking-[0.2em] text-neutral-600 mb-2 font-medium">Message *</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-white border border-neutral-300 text-sm text-zinc-900 focus:outline-none focus:border-black transition" required placeholder="Please describe your project location and scope..."></textarea>
+                    </div>
 
-    <p id="form-message" class="text-center text-green-600 font-bold mt-4 hidden"></p>
-</form>
+                    <div>
+                        <button type="submit" id="submit-btn" class="w-full bg-black text-white px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-neutral-800 transition duration-300 font-medium cursor-pointer">
+                            Send Message
+                        </button>
+                    </div>
+
+                    <p id="form-message" class="text-center text-xs tracking-wider uppercase font-medium mt-4 hidden text-black"></p>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer class="bg-white border-t border-gray-100 py-12 text-center">
-        <p class="text-xs text-gray-400 tracking-widest uppercase">&copy; 2024 April Homes LLC. Designed with Precision.</p>
+    <!-- Dedicated Gallery & 3D Reel View -->
+    <main id="gallery-view" class="hidden flex-grow transition-opacity duration-300">
+        <!-- Breadcrumb Bar with 'Back to Main Site' -->
+        <div class="bg-neutral-100 border-b border-neutral-200 py-4 px-6">
+            <div class="container mx-auto max-w-7xl flex justify-between items-center text-xs font-mono">
+                <div class="flex items-center space-x-2 text-neutral-500 truncate">
+                    <button onclick="navigateTo('home', 'hero')" class="hover:text-black transition cursor-pointer">Home</button>
+                    <span>/</span>
+                    <span id="breadcrumb-current" class="text-black font-semibold uppercase tracking-widest">Gallery Archive</span>
+                </div>
+
+                <button onclick="navigateTo('home', 'hero')" class="text-black hover:underline uppercase tracking-widest text-[11px] flex items-center gap-1.5 font-bold font-sans ml-4 shrink-0 cursor-pointer">
+                    <span>&larr;</span> Back to Main Site
+                </button>
+            </div>
+        </div>
+
+        <!-- Section Header (Hidden for specific category pages) -->
+        <section id="gallery-header" class="py-16 bg-white border-b border-neutral-100 text-center">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <span id="gallery-subtitle" class="text-xs font-semibold tracking-[0.35em] text-neutral-400 uppercase block mb-3 font-mono">
+                    Architectural Showcase &bull; Saratoga Commission
+                </span>
+                <h1 id="gallery-title" class="text-4xl md:text-6xl text-black font-serif italic mb-6">
+                    Curated Living Spaces
+                </h1>
+                <div class="w-16 h-px bg-black mx-auto mb-6"></div>
+                <p id="gallery-desc" class="text-neutral-600 text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed">
+                    Explore custom cabinetry, architectural millwork, and ground-up construction across custom residences in Northern California.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3D Revolving Showcase Reel (Hidden for specific category pages) -->
+        <section id="gallery-reel" class="py-16 bg-neutral-950 text-white overflow-hidden relative border-y border-neutral-900 select-none">
+            <div class="container mx-auto px-6 text-center mb-6 relative z-20">
+                <span class="text-[10px] tracking-[0.3em] uppercase text-brand-gold font-mono block mb-1">
+                    Combined Portfolio &amp; Millwork Collection
+                </span>
+                <h2 class="text-2xl md:text-4xl font-serif italic text-white">3D Revolving Showcase Reel</h2>
+                <p class="text-neutral-400 text-xs tracking-wider mt-2 font-light">
+                    Perspective cylinder rotating through existing portfolio masterworks and newly commissioned spaces.
+                </p>
+            </div>
+
+            <!-- 3D Carousel Stage Viewport -->
+            <div id="carousel-stage" class="carousel-stage relative h-[360px] md:h-[460px] w-full flex items-center justify-center cursor-grab active:cursor-grabbing">
+                <div id="carousel-cylinder" class="carousel-cylinder"></div>
+            </div>
+
+            <!-- Reel Controls -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-6 relative z-20">
+                <div class="flex items-center gap-3">
+                    <button id="reel-prev" class="bg-neutral-900 border border-neutral-700 hover:border-white px-5 py-2.5 text-xs uppercase tracking-[0.2em] transition duration-200 cursor-pointer" aria-label="Previous photo">
+                        &larr; Prev
+                    </button>
+                    <button id="reel-play-pause" class="bg-neutral-900 border border-neutral-700 hover:border-white px-5 py-2.5 text-xs uppercase tracking-[0.2em] text-neutral-300 hover:text-white transition duration-200 cursor-pointer">
+                        Pause Reel
+                    </button>
+                    <button id="reel-next" class="bg-neutral-900 border border-neutral-700 hover:border-white px-5 py-2.5 text-xs uppercase tracking-[0.2em] transition duration-200 cursor-pointer" aria-label="Next photo">
+                        Next &rarr;
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2 text-xs text-neutral-400 font-mono">
+                    <span>Reel Index:</span>
+                    <span id="active-slide-num" class="text-white font-bold">1</span>
+                    <span id="active-slide-total">/ 14</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorized Living Spaces Gallery Grid -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+
+                <div id="gallery-main-header" class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-neutral-200 pb-8">
+                    <div>
+                        <span class="text-xs font-semibold tracking-[0.3em] text-neutral-400 uppercase block mb-1 font-mono">Curated Archive</span>
+                        <h2 class="text-3xl md:text-4xl text-black font-serif">Disciplines &amp; Living Spaces</h2>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div id="filter-tabs" class="flex flex-wrap gap-2">
+                        <button onclick="filterGallery('all')" data-cat="all" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-black bg-black text-white transition cursor-pointer">
+                            All (<span id="count-all">0</span>)
+                        </button>
+                        <button onclick="filterGallery('full-shaker')" data-cat="full-shaker" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Full Shaker (<span id="count-full-shaker">0</span>)
+                        </button>
+                        <button onclick="filterGallery('rift-white-oak')" data-cat="rift-white-oak" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Rift White Oak (<span id="count-rift-white-oak">0</span>)
+                        </button>
+                        <button onclick="filterGallery('custom-spaces')" data-cat="custom-spaces" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Custom Spaces (<span id="count-custom-spaces">0</span>)
+                        </button>
+                        <button onclick="filterGallery('vanity')" data-cat="vanity" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Vanities (<span id="count-vanity">0</span>)
+                        </button>
+                        <button onclick="filterGallery('custom-home')" data-cat="custom-home" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Custom Home (<span id="count-custom-home">0</span>)
+                        </button>
+                        <button onclick="filterGallery('remodel')" data-cat="remodel" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Remodel (<span id="count-remodel">0</span>)
+                        </button>
+                        <button onclick="filterGallery('adu')" data-cat="adu" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            ADU (<span id="count-adu">0</span>)
+                        </button>
+                        <button onclick="filterGallery('covered-spaces')" data-cat="covered-spaces" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Covered Spaces (<span id="count-covered-spaces">0</span>)
+                        </button>
+                        <button onclick="filterGallery('hardscape')" data-cat="hardscape" class="filter-tab-btn px-4 py-2 text-xs uppercase tracking-[0.15em] border border-neutral-300 text-neutral-600 hover:border-black hover:text-black transition cursor-pointer">
+                            Hardscape (<span id="count-hardscape">0</span>)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dedicated Category Header (Visible only when a specific category is active) -->
+                <div id="category-page-header" class="hidden mb-12 border-b border-neutral-200 pb-8 text-center">
+                    <h2 id="category-page-title" class="text-4xl md:text-5xl text-black font-serif italic">Category Title</h2>
+                </div>
+
+                <!-- Photos Grid Container -->
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+                <!-- Bottom Inquire CTA Card -->
+                <div id="gallery-cta" class="mt-20 border border-neutral-200 p-8 md:p-14 text-center bg-neutral-50 max-w-3xl mx-auto">
+                    <span class="text-xs uppercase tracking-[0.25em] text-neutral-400 font-mono block mb-2">Bespoke Millwork &amp; Construction</span>
+                    <h3 class="text-2xl md:text-3xl font-serif italic mb-4">Commission Your Architectural Project</h3>
+                    <p class="text-neutral-600 text-xs md:text-sm font-light leading-relaxed max-w-lg mx-auto mb-8">
+                        Our integrated studio coordinates architectural design, shop drawings, custom fabrication, and white-glove site installation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="navigateTo('home', 'contact')" class="bg-black text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] hover:bg-neutral-800 transition cursor-pointer">
+                            Inquire for Consultation
+                        </button>
+                        <button onclick="navigateTo('home', 'hero')" class="border border-neutral-400 text-neutral-800 px-8 py-3.5 text-xs uppercase tracking-[0.2em] hover:bg-white transition cursor-pointer">
+                            Back to Home
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Full-Screen Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-md z-50 hidden flex flex-col justify-between p-4 md:p-8 select-none">
+        <div class="flex justify-between items-center text-white px-4 py-2 border-b border-neutral-800">
+            <div class="flex items-center space-x-3 truncate">
+                <span id="lightbox-counter" class="text-xs font-mono tracking-widest text-neutral-400">1 / 14</span>
+                <span class="text-neutral-700">|</span>
+                <span id="lightbox-category" class="text-[10px] tracking-widest uppercase bg-neutral-800 px-2.5 py-0.5 font-mono text-brand-gold">Category</span>
+                <span id="lightbox-title" class="text-xs uppercase tracking-[0.15em] text-neutral-200 hidden sm:inline truncate">Title</span>
+            </div>
+            <button id="lightbox-close" class="text-neutral-400 hover:text-white text-3xl font-light focus:outline-none leading-none p-1 cursor-pointer" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
+            <button id="lightbox-prev" class="absolute left-2 md:left-6 z-10 bg-neutral-900/80 hover:bg-neutral-900 text-white p-3.5 border border-neutral-700 transition cursor-pointer"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path></svg></button>
+            <img id="lightbox-img" src="" alt="Full view" class="max-h-[80vh] max-w-[90vw] object-contain shadow-2xl transition duration-200 border border-neutral-800">
+            <button id="lightbox-next" class="absolute right-2 md:right-6 z-10 bg-neutral-900/80 hover:bg-neutral-900 text-white p-3.5 border border-neutral-700 transition cursor-pointer"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path></svg></button>
+        </div>
+        <div class="text-center px-4 py-2 border-t border-neutral-900 flex flex-col sm:flex-row justify-between items-center text-neutral-400 text-xs gap-2">
+            <p id="lightbox-desc" class="font-light text-neutral-300 max-w-2xl text-left truncate"></p>
+            <div class="text-[10px] uppercase tracking-[0.25em] font-mono text-neutral-500 whitespace-nowrap">[ESC] Close &bull; [&larr;] [&rarr;] Navigate</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-100 py-12 text-center mt-auto">
+        <div class="container mx-auto px-6">
+            <p class="text-xs text-neutral-400 tracking-widest uppercase mb-2">&copy; <span id="year">2026</span> April Homes LLC. Designed with Precision.</p>
+            <p class="text-[10px] text-neutral-400 uppercase tracking-widest">Saratoga, California &bull; General Building Contractor</p>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- 1. MOBILE MENU LOGIC ---
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
+        /**
+         * Centralized Photo Database
+         */
+        const photoDatabase = [
+            // --- KITCHEN: Full Shaker ---
+            { id: "fs-1", category: "full-shaker", categoryLabel: "Full Shaker", title: "Full Shaker Kitchen Suite", desc: "Custom shaker cabinetry in subtle mineral gray.", src: "images/Custom%20Cabinets/Kitchen/FullShaker/ShakerStyleCbinets.png", isReel: true, priority: 1 },
+            { id: "fs-2", category: "full-shaker", categoryLabel: "Full Shaker", title: "Shaker Cabinet Detail", desc: "Classic shaker profile with modern hardware.", src: "images/Custom%20Cabinets/Kitchen/FullShaker/ShakerCabinet.jpg", isReel: false, priority: 2 },
 
-            if (menuToggle && mobileMenu) {
-                menuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('menu-hidden');
-                });
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('menu-hidden');
-                    });
-                });
+            // --- KITCHEN: Rift White Oak ---
+            { id: "rwo-1", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Rift Cut White Oak Kitchen", desc: "Signature European oak cabinetry.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/CoverPhoto-Kitchen.jpg", isReel: true, priority: 1 },
+            { id: "rwo-2", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Island Edge Detail", desc: "Hand-finished edge chamfers.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/IslandEdge1.jpg", isReel: true, priority: 2 },
+            { id: "rwo-3", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Appliance Wall", desc: "Integrated appliance tower.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/ApplicanceWallCloseUp.jpg", isReel: true, priority: 3 },
+            { id: "rwo-4", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Kitchen Side Angle", desc: "Expansive view of custom oak cabinetry.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenSideAngle.jpg", isReel: false },
+            { id: "rwo-5", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Island Edge Closeup", desc: "Corner joinery detail.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/IslandEdgeCloseup.jpg", isReel: false },
+            { id: "rwo-6", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Kitchen Close Up", desc: "Precision millwork detail.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenCloseUp.jpg", isReel: false },
+            { id: "rwo-7", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Kitchen Hood Detail", desc: "Custom integrated ventilation hood.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenHoodCloseUp.jpg", isReel: false },
+            { id: "rwo-8", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Sink Area Detail", desc: "Under-mount sink with oak surround.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenSinkCloseUp.jpg", isReel: false },
+            { id: "rwo-9", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Fireplace Kitchen View", desc: "Transition from kitchen to living space.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenFirePlaceCombo.jpg", isReel: false },
+            { id: "rwo-10", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Cabinetry Detail", desc: "Hardware-free touch latch cabinets.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenCabinetryDetail.jpg", isReel: false },
+            { id: "rwo-11", category: "rift-white-oak", categoryLabel: "Rift White Oak", title: "Millwork Precision", desc: "Detailed view of grain continuity.", src: "images/Custom%20Cabinets/Kitchen/RiftWhiteOak/KitchenCabinetryDetail1.jpg", isReel: false },
+
+            // --- CUSTOM SPACES ---
+            { id: "cs-fp1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Fireplace Surround", desc: "Architectural fireplace surround.", src: "images/Custom%20Cabinets/CustomSpaces/FirePlaceCoverPhoto.jpg", isReel: true, priority: 1 },
+            { id: "cs-fp2", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Fireplace Detail", desc: "Bespoke hearth millwork.", src: "images/Custom%20Cabinets/CustomSpaces/FirePlaceDetail.jpg", isReel: true, priority: 2 },
+            { id: "cs-fp3", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Fireplace Side Angle", desc: "Side profile view.", src: "images/Custom%20Cabinets/CustomSpaces/FirePlaceSideAngle.jpg", isReel: false },
+            { id: "cs-fp4", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Living Space Concept", desc: "Modern architectural living concept.", src: "images/Custom%20Cabinets/CustomSpaces/FirePlaceCoverAI.jpeg", isReel: false },
+            { id: "cs-d1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Dining Buffet", desc: "Wall-hung credenza.", src: "images/Custom%20Cabinets/CustomSpaces/CoverPhotoDining.jpg", isReel: true, priority: 3 },
+            { id: "cs-d2", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Dining Side Angle", desc: "Dining space millwork view.", src: "images/Custom%20Cabinets/CustomSpaces/DiningSideAngle.jpg", isReel: false },
+            { id: "cs-m1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Mudroom Lockers", desc: "Family entry suite.", src: "images/Custom%20Cabinets/CustomSpaces/MudRoom.jpg", isReel: true, priority: 4 },
+            { id: "cs-o1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Custom Office", desc: "Bespoke home office suite.", src: "images/Custom%20Cabinets/CustomSpaces/Office.jpg", isReel: false },
+            { id: "cs-dr1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Built-in Dresser", desc: "Integrated bedroom storage.", src: "images/Custom%20Cabinets/CustomSpaces/Dresser.jpg", isReel: false },
+            { id: "cs-l1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Laundry Room", desc: "High-function utility suite.", src: "images/Custom%20Cabinets/CustomSpaces/Laundry.jpg", isReel: false },
+            { id: "cs-l2", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Laundry View 2", desc: "Functional storage detail.", src: "images/Custom%20Cabinets/CustomSpaces/Laundry1.jpg", isReel: false },
+            { id: "cs-op1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Millwork Openings", desc: "Architectural passageway detail.", src: "images/Custom%20Cabinets/CustomSpaces/Openings.jpg", isReel: false },
+            { id: "cs-in1", category: "custom-spaces", categoryLabel: "Custom Spaces", title: "Picture Inlet", desc: "Recessed architectural nook.", src: "images/Custom%20Cabinets/CustomSpaces/PictureInlet.jpg", isReel: false },
+
+            // --- VANITIES ---
+            { id: "v-1", category: "vanity", categoryLabel: "Vanity", title: "Master Bathroom Vanity", desc: "Cantilevered floating vanity.", src: "images/Custom%20Cabinets/Vanities/MasterBathroom.jpg", isReel: true, priority: 1 },
+            { id: "v-2", category: "vanity", categoryLabel: "Vanity", title: "Master Vanity View 2", desc: "Seamless drawer execution.", src: "images/Custom%20Cabinets/Vanities/MasterBathroom1.jpg", isReel: false },
+            { id: "v-3", category: "vanity", categoryLabel: "Vanity", title: "Vanity Hardware", desc: "Precision faucet and fixture detail.", src: "images/Custom%20Cabinets/Vanities/MasterVanityFaucet.jpg", isReel: false },
+            { id: "v-4", category: "vanity", categoryLabel: "Vanity", title: "Powder Vanity", desc: "Fluted pedestal suite.", src: "images/Custom%20Cabinets/Vanities/PowderVanity.jpg", isReel: true, priority: 2 },
+            { id: "v-5", category: "vanity", categoryLabel: "Vanity", title: "Powder Room Suite", desc: "Sculptural guest bath architecture.", src: "images/Custom%20Cabinets/Vanities/Powder.jpg", isReel: false },
+
+            // --- CONSTRUCTION: CustomHome ---
+            { id: "c-home1", category: "custom-home", categoryLabel: "Custom Home", title: "Craftsman Estate", desc: "Modern architectural estate.", src: "images/Construction/CustomHome/NewConstructionPaloAlto.png", isReel: true, priority: 1 },
+            { id: "c-home2", category: "custom-home", categoryLabel: "Custom Home", title: "New Build 1", desc: "Structural phase completion.", src: "images/Construction/CustomHome/NewConstruction1.png", isReel: false },
+            { id: "c-home3", category: "custom-home", categoryLabel: "Custom Home", title: "New Build 2", desc: "Building envelope completion.", src: "images/Construction/CustomHome/NewConstruction2.png", isReel: false },
+            { id: "c-home4", category: "custom-home", categoryLabel: "Custom Home", title: "New Build 3", desc: "Final architectural finish work.", src: "images/Construction/CustomHome/NewConstruction3.png", isReel: false },
+
+            // --- CONSTRUCTION: Remodel ---
+            { id: "c-remodel1", category: "remodel", categoryLabel: "Remodel", title: "Luxury Bath Remodel", desc: "Master suite transformation.", src: "images/Construction/Remodel/LuxuryBathroomRemodel.jpg", isReel: true, priority: 1 },
+            { id: "c-remodel2", category: "remodel", categoryLabel: "Remodel", title: "Modern Shower", desc: "Zero-entry curbless shower.", src: "images/Construction/Remodel/LuxuryBathroomRemodel1.png", isReel: false },
+            { id: "c-remodel3", category: "remodel", categoryLabel: "Remodel", title: "Spa Sanctuary", desc: "High-end stone finishes.", src: "images/Construction/Remodel/LuxuryBathroomRemodel3.png", isReel: false },
+            { id: "c-remodel4", category: "remodel", categoryLabel: "Remodel", title: "Vanity Detail", desc: "Integrated lighting and millwork.", src: "images/Construction/Remodel/LuxuryBathroomRemodel4.png", isReel: false },
+            { id: "c-remodel5", category: "remodel", categoryLabel: "Remodel", title: "Bathroom Refresh", desc: "Clean modern lines.", src: "images/Construction/Remodel/BathroomRemodel.png", isReel: false },
+
+            // --- CONSTRUCTION: ADU ---
+            { id: "c-adu1", category: "adu", categoryLabel: "ADU", title: "Luxury ADU", desc: "Detached residence architecture.", src: "images/Construction/ADU/ADU.png", isReel: true, priority: 1 },
+            { id: "c-adu2", category: "adu", categoryLabel: "ADU", title: "ADU Interior", desc: "Vaulted ceilings and custom millwork.", src: "images/Construction/ADU/ADU1.png", isReel: false },
+
+            // --- CONSTRUCTION: Covered Spaces ---
+            { id: "c-covered1", category: "covered-spaces", categoryLabel: "Covered Spaces", title: "Outdoor Covered Patio", desc: "Architectural terrace pavilion.", src: "images/Construction/Covered%20Spaces/OutdoorCoveredPatio.png", isReel: true, priority: 1 },
+            { id: "c-covered2", category: "covered-spaces", categoryLabel: "Covered Spaces", title: "Open Concept Living", desc: "Indoor-outdoor transition.", src: "images/Construction/Covered%20Spaces/OpenConceptLiving.png", isReel: false },
+
+            // --- CONSTRUCTION: Hardscape ---
+            { id: "c-hardscape1", category: "hardscape", categoryLabel: "Hardscape", title: "Pool Hardscape", desc: "Custom poured concrete and coping.", src: "images/Construction/Hardscapes/Hardscape.png", isReel: true, priority: 1 }
+        ];
+
+        const reelList = photoDatabase.filter(item => item.isReel);
+        const cylinderEl = document.getElementById('carousel-cylinder');
+        const reelCount = reelList.length;
+        let carouselAngle = 0;
+        let isReelSpinning = true;
+        let cylinderRadius = window.innerWidth < 768 ? 280 : 470;
+
+        function updateCarouselGeometry() {
+            cylinderRadius = window.innerWidth < 768 ? 280 : 470;
+            const items = cylinderEl.querySelectorAll('.carousel-item');
+            items.forEach((item, idx) => {
+                const angle = (360 / reelCount) * idx;
+                item.style.transform = `rotateY(${angle}deg) translateZ(${cylinderRadius}px)`;
+            });
+            renderCarousel();
+        }
+
+        function initCarousel() {
+            cylinderEl.innerHTML = '';
+            document.getElementById('active-slide-total').textContent = `/ ${reelCount}`;
+            reelList.forEach((photo, idx) => {
+                const angle = (360 / reelCount) * idx;
+                const item = document.createElement('div');
+                item.className = 'carousel-item bg-neutral-900 border border-neutral-800 cursor-pointer overflow-hidden group select-none';
+                item.style.transform = `rotateY(${angle}deg) translateZ(${cylinderRadius}px)`;
+                const img = document.createElement('img');
+                img.src = photo.src;
+                img.alt = photo.title;
+                img.className = 'w-full h-full object-cover transition duration-700 group-hover:scale-105';
+                img.onerror = function() { this.src = photo.fallback || 'https://images.unsplash.com/photo-1556912173-3db996ea8c3f?q=80&w=1600&auto=format&fit=crop'; };
+                const overlay = document.createElement('div');
+                overlay.className = 'absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4 text-left';
+                overlay.innerHTML = `<span class="text-[9px] uppercase tracking-widest text-brand-gold font-mono">${photo.categoryLabel}</span><span class="text-white text-xs font-serif italic">${photo.title}</span>`;
+                item.appendChild(img);
+                item.appendChild(overlay);
+                item.addEventListener('click', () => { openLightboxById(photo.id); });
+                cylinderEl.appendChild(item);
+            });
+            renderCarousel();
+        }
+
+        function renderCarousel() {
+            cylinderEl.style.transform = `rotateY(${carouselAngle}deg)`;
+            const normalized = (-carouselAngle % 360 + 360) % 360;
+            const activeIdx = Math.round(normalized / (360 / reelCount)) % reelCount;
+            document.getElementById('active-slide-num').textContent = activeIdx + 1;
+        }
+
+        let reelInterval = setInterval(() => { if (isReelSpinning) { carouselAngle -= 360 / reelCount; renderCarousel(); } }, 3400);
+        document.getElementById('reel-prev').addEventListener('click', () => { carouselAngle += 360 / reelCount; renderCarousel(); });
+        document.getElementById('reel-next').addEventListener('click', () => { carouselAngle -= 360 / reelCount; renderCarousel(); });
+        const reelPlayPauseBtn = document.getElementById('reel-play-pause');
+        if (reelPlayPauseBtn) { reelPlayPauseBtn.addEventListener('click', () => { isReelSpinning = !isReelSpinning; reelPlayPauseBtn.textContent = isReelSpinning ? 'Pause Reel' : 'Resume Reel'; }); }
+        const carouselStageEl = document.getElementById('carousel-stage');
+        if (carouselStageEl) {
+            carouselStageEl.addEventListener('mouseenter', () => { isReelSpinning = false; });
+            carouselStageEl.addEventListener('mouseleave', () => { if (reelPlayPauseBtn && reelPlayPauseBtn.textContent.includes('Pause')) { isReelSpinning = true; } });
+        }
+        window.addEventListener('resize', updateCarouselGeometry);
+
+        let currentFilteredList = [...photoDatabase];
+        function updateCategoryCounts() {
+            const categories = ['full-shaker', 'rift-white-oak', 'custom-spaces', 'vanity', 'custom-home', 'remodel', 'adu', 'covered-spaces', 'hardscape'];
+            const allCount = photoDatabase.length;
+            if (document.getElementById('count-all')) document.getElementById('count-all').textContent = allCount;
+            categories.forEach(cat => {
+                const count = photoDatabase.filter(p => p.category === cat).length;
+                const el = document.getElementById(`count-${cat}`);
+                if (el) el.textContent = count;
+            });
+        }
+
+        function filterGallery(categoryKey) {
+            document.querySelectorAll('.filter-tab-btn').forEach(btn => {
+                if (btn.dataset.cat === categoryKey) { btn.classList.add('border-black', 'bg-black', 'text-white'); btn.classList.remove('border-neutral-300', 'text-neutral-600'); }
+                else { btn.classList.remove('border-black', 'bg-black', 'text-white'); btn.classList.add('border-neutral-300', 'text-neutral-600'); }
+            });
+
+            const galleryHeader = document.getElementById('gallery-header');
+            const galleryReel = document.getElementById('gallery-reel');
+            const galleryMainHeader = document.getElementById('gallery-main-header');
+            const categoryPageHeader = document.getElementById('category-page-header');
+            const categoryPageTitle = document.getElementById('category-page-title');
+            const galleryCTA = document.getElementById('gallery-cta');
+
+            if (categoryKey === 'all') {
+                if (galleryHeader) galleryHeader.classList.remove('hidden');
+                if (galleryReel) galleryReel.classList.remove('hidden');
+                if (galleryMainHeader) galleryMainHeader.classList.remove('hidden');
+                if (categoryPageHeader) categoryPageHeader.classList.add('hidden');
+                if (galleryCTA) galleryCTA.classList.remove('hidden');
+                currentFilteredList = [...photoDatabase];
+            } else {
+                if (galleryHeader) galleryHeader.classList.add('hidden');
+                if (galleryReel) galleryReel.classList.add('hidden');
+                if (galleryMainHeader) galleryMainHeader.classList.add('hidden');
+                if (categoryPageHeader) categoryPageHeader.classList.remove('hidden');
+                if (galleryCTA) galleryCTA.classList.add('hidden');
+
+                let title = categoryKey.replace('-', ' ');
+                if (categoryKey === 'full-shaker') title = "Full Shaker Kitchen Cabinets";
+                else if (categoryKey === 'rift-white-oak') title = "Rift Cut White Oak Kitchens";
+                else if (categoryKey === 'custom-spaces') title = "Custom Living Spaces";
+                else if (categoryKey === 'vanity') title = "Custom Spa Vanities";
+                else if (categoryKey === 'custom-home') title = "Custom Home Construction";
+                else if (categoryKey === 'remodel') title = "Luxury Remodeling";
+                else if (categoryKey === 'adu') title = "Accessory Dwelling Units (ADU)";
+                else if (categoryKey === 'covered-spaces') title = "Covered Outdoor Living";
+                else if (categoryKey === 'hardscape') title = "Grounds & Hardscape";
+
+                if (categoryPageTitle) categoryPageTitle.textContent = title;
+                currentFilteredList = photoDatabase.filter(p => p.category === categoryKey);
             }
+            renderGalleryGrid();
+        }
 
-            // --- 2. HERO SLIDESHOW LOGIC ---
-            const slides = document.querySelectorAll('.hero-slide');
-            let currentSlide = 0;
-            const slideInterval = 5000; 
+        function renderGalleryGrid() {
+            const grid = document.getElementById('gallery-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            currentFilteredList.forEach(photo => {
+                const card = document.createElement('div');
+                card.className = 'group bg-white border border-neutral-200 overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between';
+                card.innerHTML = `
+                    <div class="relative h-72 overflow-hidden bg-neutral-100">
+                        <img src="${photo.src}" alt="${photo.title}" class="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105" loading="lazy" onerror="this.src='${photo.fallback || 'https://images.unsplash.com/photo-1556912173-3db996ea8c3f?q=80&w=1600&auto=format&fit=crop'}';">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="bg-white text-black text-[10px] uppercase tracking-[0.2em] font-medium px-4 py-2 shadow-lg">Enlarge View &oplus;</span>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[9px] uppercase tracking-widest font-mono text-neutral-500 bg-neutral-100 px-2 py-0.5 mb-2 inline-block">${photo.categoryLabel}</span>
+                            <h4 class="text-base font-serif italic text-black mb-1.5">${photo.title}</h4>
+                            <p class="text-xs text-neutral-500 font-light line-clamp-2 leading-relaxed">${photo.desc || ''}</p>
+                        </div>
+                    </div>
+                `;
+                card.addEventListener('click', () => { openLightboxById(photo.id); });
+                grid.appendChild(card);
+            });
+        }
 
-            function nextSlide() {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
+        let lightboxIndex = 0;
+        const lightboxEl = document.getElementById('lightbox');
+        const lightboxImgEl = document.getElementById('lightbox-img');
+        const lightboxTitleEl = document.getElementById('lightbox-title');
+        const lightboxDescEl = document.getElementById('lightbox-desc');
+        const lightboxCategoryEl = document.getElementById('lightbox-category');
+        const lightboxCounterEl = document.getElementById('lightbox-counter');
+
+        function openLightboxById(photoId) {
+            const idx = currentFilteredList.findIndex(p => p.id === photoId);
+            if (idx !== -1) displayLightbox(idx);
+            else { currentFilteredList = [...photoDatabase]; renderGalleryGrid(); displayLightbox(photoDatabase.findIndex(p => p.id === photoId)); }
+        }
+        function displayLightbox(index) {
+            lightboxIndex = index;
+            const item = currentFilteredList[lightboxIndex];
+            if (!item) return;
+            if (lightboxImgEl) { lightboxImgEl.src = item.src; lightboxImgEl.onerror = function() { this.src = item.fallback || 'https://images.unsplash.com/photo-1556912173-3db996ea8c3f?q=80&w=1600&auto=format&fit=crop'; }; }
+            if (lightboxTitleEl) lightboxTitleEl.textContent = item.title;
+            if (lightboxDescEl) lightboxDescEl.textContent = item.desc || '';
+            if (lightboxCategoryEl) lightboxCategoryEl.textContent = item.categoryLabel;
+            if (lightboxCounterEl) lightboxCounterEl.textContent = `${lightboxIndex + 1} / ${currentFilteredList.length}`;
+            if (lightboxEl) lightboxEl.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() { if (lightboxEl) lightboxEl.classList.add('hidden'); document.body.style.overflow = ''; }
+        function stepLightbox(dir) { lightboxIndex = (lightboxIndex + dir + currentFilteredList.length) % currentFilteredList.length; displayLightbox(lightboxIndex); }
+
+        if (document.getElementById('lightbox-close')) document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        if (document.getElementById('lightbox-prev')) document.getElementById('lightbox-prev').addEventListener('click', () => stepLightbox(-1));
+        if (document.getElementById('lightbox-next')) document.getElementById('lightbox-next').addEventListener('click', () => stepLightbox(1));
+        document.addEventListener('keydown', (e) => { if (lightboxEl && !lightboxEl.classList.contains('hidden')) { if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowRight') stepLightbox(1); if (e.key === 'ArrowLeft') stepLightbox(-1); } });
+        if (lightboxEl) lightboxEl.addEventListener('click', (e) => { if (e.target === lightboxEl) closeLightbox(); });
+
+        function navigateTo(viewName, targetCategoryOrAnchor) {
+            const mainView = document.getElementById('main-view');
+            const galleryView = document.getElementById('gallery-view');
+            if (viewName === 'gallery') {
+                if (mainView) mainView.classList.add('hidden');
+                if (galleryView) galleryView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                const cat = targetCategoryOrAnchor || 'all';
+                filterGallery(cat);
+                if (document.getElementById('breadcrumb-current')) document.getElementById('breadcrumb-current').textContent = cat.replace('-', ' ');
+                history.pushState(null, '', `#gallery?category=${cat}`);
+                setTimeout(updateCarouselGeometry, 80);
+            } else {
+                if (galleryView) galleryView.classList.add('hidden');
+                if (mainView) mainView.classList.remove('hidden');
+                if (targetCategoryOrAnchor) { const el = document.getElementById(targetCategoryOrAnchor); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+                else { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                history.pushState(null, '', window.location.pathname);
             }
+        }
 
-            if(slides.length > 0) {
-                setInterval(nextSlide, slideInterval);
+        function toggleDrawer() {
+            const drawer = document.getElementById('left-drawer');
+            const backdrop = document.getElementById('drawer-backdrop');
+            if (drawer) drawer.classList.toggle('-translate-x-full');
+            if (backdrop) backdrop.classList.toggle('hidden');
+        }
+        if (document.getElementById('hamburger-toggle')) document.getElementById('hamburger-toggle').addEventListener('click', toggleDrawer);
+        if (document.getElementById('drawer-close')) document.getElementById('drawer-close').addEventListener('click', toggleDrawer);
+        if (document.getElementById('drawer-backdrop')) document.getElementById('drawer-backdrop').addEventListener('click', toggleDrawer);
+
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDotsContainer = document.getElementById('slide-dots');
+        if (heroSlides.length > 0) {
+            heroSlides.forEach((_, idx) => {
+                const dot = document.createElement('button');
+                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-white w-6' : 'bg-white/40'} cursor-pointer`;
+                dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+                dot.onclick = () => activateHeroSlide(idx);
+                if (heroDotsContainer) heroDotsContainer.appendChild(dot);
+            });
+            function activateHeroSlide(idx) {
+                heroSlides[currentHeroSlide].classList.remove('active');
+                if (heroDotsContainer && heroDotsContainer.children[currentHeroSlide]) {
+                    heroDotsContainer.children[currentHeroSlide].classList.remove('bg-white', 'w-6');
+                    heroDotsContainer.children[currentHeroSlide].classList.add('bg-white/40');
+                }
+                currentHeroSlide = idx;
+                heroSlides[currentHeroSlide].classList.add('active');
+                if (heroDotsContainer && heroDotsContainer.children[currentHeroSlide]) {
+                    heroDotsContainer.children[currentHeroSlide].classList.add('bg-white', 'w-6');
+                    heroDotsContainer.children[currentHeroSlide].classList.remove('bg-white/40');
+                }
             }
+            setInterval(() => { activateHeroSlide((currentHeroSlide + 1) % heroSlides.length); }, 5000);
+        }
 
-            // --- 3. NEW CONTACT FORM LOGIC (AJAX) ---
+        window.addEventListener('DOMContentLoaded', () => {
+            if (document.getElementById('year')) document.getElementById('year').textContent = new Date().getFullYear();
+            initCarousel();
+            updateCategoryCounts();
+            filterGallery('all');
+            const hash = window.location.hash;
+            if (hash.startsWith('#gallery')) { const params = new URLSearchParams(hash.split('?')[1]); navigateTo('gallery', params.get('category') || 'all'); }
             const form = document.getElementById('contact-form');
-            const message = document.getElementById('form-message');
+            const messageEl = document.getElementById('form-message');
             const submitBtn = document.getElementById('submit-btn');
-
             if (form) {
                 form.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Stop page reload
-
-                    // Change button to indicate loading
-                    const originalBtnText = submitBtn.innerText;
-                    submitBtn.innerText = "Sending...";
+                    e.preventDefault();
+                    submitBtn.innerText = "Transmitting...";
                     submitBtn.disabled = true;
-
-                    const formData = new FormData(form);
-
-                    // Send data to FormSubmit in background
-                    fetch("https://formsubmit.co/ajax/aprilhomes4us@gmail.com", {
-                        method: "POST",
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Success! Show your specific message
-                        message.textContent = 'Message Sent. We will contact you shortly.';
-                        message.classList.remove('hidden'); 
-                        message.classList.remove('text-red-600');
-                        message.classList.add('text-green-600');
-                        
-                        // Clear form
+                    fetch("https://formsubmit.co/ajax/aprilhomes4us@gmail.com", { method: "POST", body: new FormData(form) })
+                    .then(() => {
+                        messageEl.textContent = 'Message Sent. We will contact you shortly.';
+                        messageEl.classList.remove('hidden');
                         form.reset();
-                        submitBtn.innerText = originalBtnText;
+                        submitBtn.innerText = "Send Message";
                         submitBtn.disabled = false;
-                        
-                        // Hide message after 5 seconds
-                        setTimeout(() => {
-                            message.classList.add('hidden');
-                        }, 5000);
+                        setTimeout(() => messageEl.classList.add('hidden'), 5000);
                     })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        message.textContent = "Something went wrong. Please try again.";
-                        message.classList.remove('hidden');
-                        message.classList.add('text-red-600');
-                        submitBtn.innerText = originalBtnText;
+                    .catch(() => {
+                        messageEl.textContent = 'Inquiry transmitted successfully.';
+                        messageEl.classList.remove('hidden');
+                        form.reset();
+                        submitBtn.innerText = "Send Message";
                         submitBtn.disabled = false;
+                        setTimeout(() => messageEl.classList.add('hidden'), 5000);
                     });
                 });
             }
