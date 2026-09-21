@@ -117,6 +117,13 @@
             visibility: visible;
             transform: translateY(0);
         }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900 antialiased selection:bg-black selection:text-white flex flex-col min-h-screen">
@@ -164,7 +171,7 @@
         </div>
 
         <!-- Sub-Header Navigation Bar (RH Style Architectural Categories) -->
-        <nav class="hidden lg:flex justify-center items-center space-x-10 py-3 border-t border-neutral-100 bg-white text-xs tracking-[0.2em] font-medium uppercase text-neutral-600">
+        <nav class="flex overflow-x-auto no-scrollbar items-center justify-start lg:justify-center space-x-6 md:space-x-10 py-3 border-t border-neutral-100 bg-white text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase text-neutral-600 px-6 whitespace-nowrap">
             
             <!-- Kitchen with Dropdown (Full Shaker, Rift White Oak) -->
             <div class="relative dropdown-parent py-1">
@@ -228,6 +235,13 @@
                 <div class="space-y-6 text-xs uppercase tracking-[0.25em] font-light">
                     <button onclick="navigateTo('home', 'hero'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Home</button>
                     <button onclick="navigateTo('home', 'about'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">About</button>
+
+                    <!-- Mobile-Friendly Category Access -->
+                    <button onclick="navigateTo('gallery', 'full-shaker'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Kitchen</button>
+                    <button onclick="navigateTo('gallery', 'custom-spaces'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Custom Spaces</button>
+                    <button onclick="navigateTo('gallery', 'vanity'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Vanities</button>
+                    <button onclick="navigateTo('gallery', 'custom-home'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Construction</button>
+
                     <button onclick="navigateTo('home', 'contact'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Contact</button>
                 </div>
             </div>
