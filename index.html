@@ -170,8 +170,8 @@
             </div>
         </div>
 
-        <!-- Sub-Header Navigation Bar (RH Style Architectural Categories) -->
-        <nav class="flex overflow-x-auto no-scrollbar items-center justify-start lg:justify-center space-x-6 md:space-x-10 py-3 border-t border-neutral-100 bg-white text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase text-neutral-600 px-6 whitespace-nowrap">
+        <!-- Sub-Header Navigation Bar (Desktop with Dropdowns) -->
+        <nav class="hidden lg:flex justify-center items-center space-x-10 py-3 border-t border-neutral-100 bg-white text-xs tracking-[0.2em] font-medium uppercase text-neutral-600 overflow-visible">
             
             <!-- Kitchen with Dropdown (Full Shaker, Rift White Oak) -->
             <div class="relative dropdown-parent py-1">
@@ -188,7 +188,7 @@
                 </div>
             </div>
 
-            <!-- Custom Spaces (FirePlace First) -->
+            <!-- Custom Spaces -->
             <button onclick="navigateTo('gallery', 'custom-spaces')" class="hover:text-black transition py-1 cursor-pointer">
                 Custom Spaces
             </button>
@@ -221,7 +221,14 @@
                     </button>
                 </div>
             </div>
+        </nav>
 
+        <!-- Sub-Header Navigation Bar (Mobile Scrollable) -->
+        <nav class="flex lg:hidden overflow-x-auto no-scrollbar items-center justify-start space-x-6 py-3 border-t border-neutral-100 bg-white text-[10px] tracking-[0.2em] font-medium uppercase text-neutral-600 px-6 whitespace-nowrap">
+            <button onclick="navigateTo('gallery', 'full-shaker')" class="hover:text-black transition py-1 cursor-pointer">Kitchen</button>
+            <button onclick="navigateTo('gallery', 'custom-spaces')" class="hover:text-black transition py-1 cursor-pointer">Custom Spaces</button>
+            <button onclick="navigateTo('gallery', 'vanity')" class="hover:text-black transition py-1 cursor-pointer">Vanities</button>
+            <button onclick="navigateTo('gallery', 'custom-home')" class="hover:text-black transition py-1 cursor-pointer">Construction</button>
         </nav>
 
         <!-- Slide-out Left Drawer for About, Contact & Living Spaces -->
@@ -237,12 +244,15 @@
                     <button onclick="navigateTo('home', 'about'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">About</button>
 
                     <!-- Mobile-Friendly Category Access -->
-                    <button onclick="navigateTo('gallery', 'full-shaker'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Kitchen</button>
-                    <button onclick="navigateTo('gallery', 'custom-spaces'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Custom Spaces</button>
-                    <button onclick="navigateTo('gallery', 'vanity'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Vanities</button>
-                    <button onclick="navigateTo('gallery', 'custom-home'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Construction</button>
+                    <div class="space-y-4 pt-2 border-t border-neutral-900">
+                        <span class="text-[9px] text-neutral-500 uppercase tracking-widest block font-mono mb-2">Portfolio</span>
+                        <button onclick="navigateTo('gallery', 'rift-white-oak'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Kitchen</button>
+                        <button onclick="navigateTo('gallery', 'custom-spaces'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Custom Spaces</button>
+                        <button onclick="navigateTo('gallery', 'vanity'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Vanities</button>
+                        <button onclick="navigateTo('gallery', 'custom-home'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Construction</button>
+                    </div>
 
-                    <button onclick="navigateTo('home', 'contact'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer">Contact</button>
+                    <button onclick="navigateTo('home', 'contact'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer pt-2 border-t border-neutral-900">Contact</button>
                 </div>
             </div>
 
@@ -283,17 +293,16 @@
                     Beyond <br> Imagination
                 </h1>
 
-                <!-- Direct Call To Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <!-- Direct Call To Action Buttons (Optimized for Mobile Portrait) -->
+                <div class="flex flex-row items-center justify-center gap-3 w-full max-w-md">
                     <!-- CTA 1: Custom Cabinets -->
-                    <button onclick="navigateTo('gallery', 'rift-white-oak')" class="w-full sm:w-auto bg-white text-black px-8 py-4 text-xs uppercase tracking-[0.2em] font-medium hover:bg-neutral-200 transition duration-300 shadow-xl cursor-pointer">
+                    <button onclick="navigateTo('gallery', 'rift-white-oak')" class="flex-1 bg-white text-black py-3.5 px-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:bg-neutral-200 transition duration-300 shadow-xl cursor-pointer whitespace-nowrap">
                         Custom Cabinets
                     </button>
                     <!-- CTA 2: Construction -->
-                    <button onclick="navigateTo('gallery', 'custom-home')" class="w-full sm:w-auto border border-white text-white px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-500 cursor-pointer">
+                    <button onclick="navigateTo('gallery', 'custom-home')" class="flex-1 border border-white text-white py-3.5 px-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-white hover:text-black transition duration-500 cursor-pointer whitespace-nowrap">
                         Construction
                     </button>
-
                 </div>
             </div>
 
