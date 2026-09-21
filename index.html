@@ -129,8 +129,7 @@
 <body class="bg-white text-zinc-900 antialiased selection:bg-black selection:text-white flex flex-col min-h-screen">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-neutral-950 text-neutral-400 text-[10px] tracking-[0.25em] uppercase py-2 px-6 border-b border-neutral-900 flex justify-between items-center z-50 relative">
-        <span class="truncate">Saratoga &bull; Palo Alto &bull; Los Gatos &bull; San Jose</span>
+    <div class="bg-neutral-950 text-neutral-400 text-[10px] tracking-[0.25em] uppercase py-2 px-6 border-b border-neutral-900 flex justify-end items-center z-50 relative">
         <div class="flex items-center space-x-5">
             <span class="hidden md:inline font-light">Custom Architectural Design &bull; Build Firm</span>
             <span class="hidden md:inline text-neutral-700">|</span>
@@ -225,10 +224,10 @@
 
         <!-- Sub-Header Navigation Bar (Mobile Scrollable) -->
         <nav class="flex lg:hidden overflow-x-auto no-scrollbar items-center justify-start space-x-6 py-3 border-t border-neutral-100 bg-white text-[10px] tracking-[0.2em] font-medium uppercase text-neutral-600 px-6 whitespace-nowrap">
-            <button onclick="navigateTo('gallery', 'full-shaker')" class="hover:text-black transition py-1 cursor-pointer">Kitchen</button>
+            <button onclick="navigateTo('gallery', 'kitchen-all')" class="hover:text-black transition py-1 cursor-pointer font-bold border-b-2 border-transparent active:border-black">Kitchen</button>
             <button onclick="navigateTo('gallery', 'custom-spaces')" class="hover:text-black transition py-1 cursor-pointer">Custom Spaces</button>
             <button onclick="navigateTo('gallery', 'vanity')" class="hover:text-black transition py-1 cursor-pointer">Vanities</button>
-            <button onclick="navigateTo('gallery', 'custom-home')" class="hover:text-black transition py-1 cursor-pointer">Construction</button>
+            <button onclick="navigateTo('gallery', 'construction-all')" class="hover:text-black transition py-1 cursor-pointer font-bold border-b-2 border-transparent active:border-black">Construction</button>
         </nav>
 
         <!-- Slide-out Left Drawer for About, Contact & Living Spaces -->
@@ -246,10 +245,30 @@
                     <!-- Mobile-Friendly Category Access -->
                     <div class="space-y-4 pt-2 border-t border-neutral-900">
                         <span class="text-[9px] text-neutral-500 uppercase tracking-widest block font-mono mb-2">Portfolio</span>
-                        <button onclick="navigateTo('gallery', 'rift-white-oak'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Kitchen</button>
+
+                        <!-- Kitchen Group -->
+                        <div class="space-y-2">
+                            <button onclick="navigateTo('gallery', 'kitchen-all'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2 font-medium">Kitchen</button>
+                            <div class="pl-6 space-y-2 border-l border-neutral-800 ml-2">
+                                <button onclick="navigateTo('gallery', 'full-shaker'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">Full Shaker</button>
+                                <button onclick="navigateTo('gallery', 'rift-white-oak'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">Rift White Oak</button>
+                            </div>
+                        </div>
+
                         <button onclick="navigateTo('gallery', 'custom-spaces'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Custom Spaces</button>
                         <button onclick="navigateTo('gallery', 'vanity'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Vanities</button>
-                        <button onclick="navigateTo('gallery', 'custom-home'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2">Construction</button>
+
+                        <!-- Construction Group -->
+                        <div class="space-y-2">
+                            <button onclick="navigateTo('gallery', 'construction-all'); toggleDrawer();" class="block w-full text-left text-neutral-300 hover:text-white transition cursor-pointer pl-2 font-medium">Construction</button>
+                            <div class="pl-6 space-y-2 border-l border-neutral-800 ml-2">
+                                <button onclick="navigateTo('gallery', 'custom-home'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">Custom Home</button>
+                                <button onclick="navigateTo('gallery', 'remodel'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">Remodel</button>
+                                <button onclick="navigateTo('gallery', 'adu'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">ADU</button>
+                                <button onclick="navigateTo('gallery', 'covered-spaces'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">Covered Spaces</button>
+                                <button onclick="navigateTo('gallery', 'hardscape'); toggleDrawer();" class="block w-full text-left text-[10px] text-neutral-500 hover:text-white transition cursor-pointer">Hardscape</button>
+                            </div>
+                        </div>
                     </div>
 
                     <button onclick="navigateTo('home', 'contact'); toggleDrawer();" class="block w-full text-left hover:text-brand-gold transition cursor-pointer pt-2 border-t border-neutral-900">Contact</button>
@@ -285,22 +304,15 @@
 
             <div class="hero-overlay"></div>
             
-            <div class="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
-                <p class="text-white text-xs md:text-sm tracking-[0.35em] uppercase mb-6 opacity-90 font-light">
-                    Saratoga &bull; Palo Alto &bull; Los Gatos &bull; San Jose &bull;Est. 2024
-                </p>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight italic font-serif">
-                    Beyond <br> Imagination
-                </h1>
-
-                <!-- Direct Call To Action Buttons (Optimized for Mobile Portrait) -->
-                <div class="flex flex-row items-center justify-center gap-3 w-full max-w-md">
+            <!-- CTA Unit (Realigned to Bottom) -->
+            <div class="absolute bottom-24 sm:bottom-32 left-0 right-0 z-10 px-6 flex flex-col items-center">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-lg">
                     <!-- CTA 1: Custom Cabinets -->
-                    <button onclick="navigateTo('gallery', 'rift-white-oak')" class="flex-1 bg-white text-black py-3.5 px-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium hover:bg-neutral-200 transition duration-300 shadow-xl cursor-pointer whitespace-nowrap">
+                    <button onclick="navigateTo('gallery', 'rift-white-oak')" class="w-full sm:w-64 bg-white text-black py-4 text-xs uppercase tracking-[0.2em] font-medium hover:bg-neutral-200 transition duration-300 shadow-2xl cursor-pointer">
                         Custom Cabinets
                     </button>
                     <!-- CTA 2: Construction -->
-                    <button onclick="navigateTo('gallery', 'custom-home')" class="flex-1 border border-white text-white py-3.5 px-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] hover:bg-white hover:text-black transition duration-500 cursor-pointer whitespace-nowrap">
+                    <button onclick="navigateTo('gallery', 'custom-home')" class="w-full sm:w-64 border border-white text-white py-4 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition duration-500 cursor-pointer shadow-2xl">
                         Construction
                     </button>
                 </div>
@@ -761,18 +773,27 @@
                 if (galleryCTA) galleryCTA.classList.add('hidden');
 
                 let title = categoryKey.replace('-', ' ');
-                if (categoryKey === 'full-shaker') title = "Full Shaker Kitchen Cabinets";
-                else if (categoryKey === 'rift-white-oak') title = "Rift Cut White Oak Kitchens";
-                else if (categoryKey === 'custom-spaces') title = "Custom Living Spaces";
-                else if (categoryKey === 'vanity') title = "Custom Spa Vanities";
-                else if (categoryKey === 'custom-home') title = "Custom Home Construction";
-                else if (categoryKey === 'remodel') title = "Luxury Remodeling";
-                else if (categoryKey === 'adu') title = "Accessory Dwelling Units (ADU)";
-                else if (categoryKey === 'covered-spaces') title = "Covered Outdoor Living";
-                else if (categoryKey === 'hardscape') title = "Grounds & Hardscape";
+                if (categoryKey === 'kitchen-all') {
+                    title = "Kitchen Portfolio";
+                    currentFilteredList = photoDatabase.filter(p => p.category === 'full-shaker' || p.category === 'rift-white-oak');
+                } else if (categoryKey === 'construction-all') {
+                    title = "Construction Portfolio";
+                    currentFilteredList = photoDatabase.filter(p => ['custom-home', 'remodel', 'adu', 'covered-spaces', 'hardscape'].includes(p.category));
+                } else {
+                    if (categoryKey === 'full-shaker') title = "Full Shaker Kitchen Cabinets";
+                    else if (categoryKey === 'rift-white-oak') title = "Rift Cut White Oak Kitchens";
+                    else if (categoryKey === 'custom-spaces') title = "Custom Living Spaces";
+                    else if (categoryKey === 'vanity') title = "Custom Spa Vanities";
+                    else if (categoryKey === 'custom-home') title = "Custom Home Construction";
+                    else if (categoryKey === 'remodel') title = "Luxury Remodeling";
+                    else if (categoryKey === 'adu') title = "Accessory Dwelling Units (ADU)";
+                    else if (categoryKey === 'covered-spaces') title = "Covered Outdoor Living";
+                    else if (categoryKey === 'hardscape') title = "Grounds & Hardscape";
+
+                    currentFilteredList = photoDatabase.filter(p => p.category === categoryKey);
+                }
 
                 if (categoryPageTitle) categoryPageTitle.textContent = title;
-                currentFilteredList = photoDatabase.filter(p => p.category === categoryKey);
             }
             renderGalleryGrid();
         }
